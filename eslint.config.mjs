@@ -120,7 +120,7 @@ export default defineConfig([
                 'code': 120,
                 'ignoreComments': false, // Ignore long comments
                 'ignoreUrls': false, // Ignore long URLs
-                'ignoreStrings': false, // Ignore strings in the line length calculation
+                'ignoreStrings': true, // Ignore strings in the line length calculation
                 'ignoreTemplateLiterals': false, // Ignore template literals
                 'ignoreRegExpLiterals': false
             }],
