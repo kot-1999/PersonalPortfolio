@@ -56,24 +56,3 @@ for (const iconShortcut of iconPaths) {
 
     iconsDiv.appendChild(iconClone)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
