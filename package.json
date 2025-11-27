@@ -1,8 +1,8 @@
 {
-  "name": "webDesign01",
+  "name": "PersonalPortfolio",
   "version": "1.0.0",
   "description": "",
-  "main": "scripts/index.js",
+  "main": "scripts/skills.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,8 +16,5 @@
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-prettier": "5.5.4",
     "globals": "16.4.0"
-  },
-  "dev": {
-
   }
 }

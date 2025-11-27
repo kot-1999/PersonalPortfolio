@@ -79,7 +79,10 @@ export default defineConfig([
         },
         extends: ['js/recommended'],
         languageOptions: {
-            globals: globals.browser
+            globals: {
+                ...globals.browser,
+                '$': 'readonly'
+            }
         },
         rules: {
             'object-curly-newline': [
