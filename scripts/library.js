@@ -1,6 +1,10 @@
+import Mustache from './mustache.js';
+import { bookTemplate } from './templates.js';
+
 const personalLibrary = [
     // Programming Languages
     {
+        key: 'The C Programming Language',
         name: 'The C Programming Language',
         author: 'Brian W. Kernighan',
         category: 'Programming Languages',
@@ -8,6 +12,7 @@ const personalLibrary = [
         takeaways: 'Learned pointers, memory management, structured programming, and clean coding practices.'
     },
     {
+        key: 'C++ Programming Language',
         name: 'C++ Programming Language',
         author: 'Bjarne Stroustrup',
         category: 'Programming Languages',
@@ -15,6 +20,7 @@ const personalLibrary = [
         takeaways: 'Learned OOP principles, templates, STL, memory management, RAII, and idiomatic C++ patterns.'
     },
     {
+        key: 'Java a Beginner\'s Guide',
         name: 'Java a Beginner\'s Guide',
         author: 'Herbert Schildt',
         category: 'Programming Languages',
@@ -22,6 +28,7 @@ const personalLibrary = [
         takeaways: 'Learned Java syntax, OOP principles, basic GUI development, exception handling, and standard libraries.'
     },
     {
+        key: 'Effective Java',
         name: 'Effective Java',
         author: 'Joshua Bloch',
         category: 'Programming Languages',
@@ -29,6 +36,7 @@ const personalLibrary = [
         takeaways: 'Learned design patterns, API usage, performance optimization, and writing clean, efficient Java code.'
     },
     {
+        key: 'C The complete Reference',
         name: 'C# The complete Reference',
         author: 'Herbert Schildt',
         category: 'Programming Languages',
@@ -36,6 +44,7 @@ const personalLibrary = [
         takeaways: 'Learned C# syntax, LINQ, collections, .NET frameworks, and practical backend application development.'
     },
     {
+        key: 'JavaScript & JQuery',
         name: 'JavaScript & JQuery',
         author: 'David Dakett',
         category: 'Programming Languages',
@@ -43,6 +52,7 @@ const personalLibrary = [
         takeaways: 'Learned JavaScript syntax, DOM API, event handling, asynchronous programming, and basic web interactivity.'
     },
     {
+        key: 'HTML & CSS',
         name: 'HTML & CSS',
         author: 'David Dakett',
         category: 'Web Development',
@@ -50,6 +60,7 @@ const personalLibrary = [
         takeaways: 'Learned HTML semantics, CSS layout techniques, styling, responsive design, and best practices for web design.'
     },
     {
+        key: 'NodeJS Web Development',
         name: 'NodeJS Web Development',
         author: 'David Herron',
         category: 'Backend Development',
@@ -59,6 +70,7 @@ const personalLibrary = [
 
     // Software Development
     {
+        key: 'Git Magic',
         name: 'Git Magic',
         author: 'Ben Lynn',
         category: 'Software Development',
@@ -66,6 +78,7 @@ const personalLibrary = [
         takeaways: 'Learned Git commands, branching strategies, conflict resolution, and efficient version control practices.'
     },
     {
+        key: 'Grokking Algorithms',
         name: 'Grokking Algorithms',
         author: 'Aditya Bhargava',
         category: 'Software Development',
@@ -73,6 +86,7 @@ const personalLibrary = [
         takeaways: 'Learned sorting, searching, recursion, Big O notation, and algorithmic thinking for coding challenges.'
     },
     {
+        key: 'Design Patterns',
         name: 'Design Patterns',
         author: 'Erich Gamma',
         category: 'Software Development',
@@ -82,6 +96,7 @@ const personalLibrary = [
 
     // AI & Machine Learning
     {
+        key: 'Deep Reinforcement Learning with Python',
         name: 'Deep Reinforcement Learning with Python',
         author: 'Sudharsan Ravichandiran',
         category: 'AI / Machine Learning',
@@ -89,6 +104,7 @@ const personalLibrary = [
         takeaways: 'Learned Q-learning, policy gradients, neural network integration, environment design, and agent training techniques.'
     },
     {
+        key: 'Python Machine Learning',
         name: 'Python Machine Learning',
         author: 'Sebastian Raschka',
         category: 'AI / Machine Learning',
@@ -96,6 +112,7 @@ const personalLibrary = [
         takeaways: 'Learned supervised and unsupervised learning, scikit-learn usage, model evaluation, and feature engineering.'
     },
     {
+        key: 'Intelligent Agents with OpenAI Gym',
         name: 'Intelligent Agents with OpenAI Gym',
         author: 'Praveen Palanisamy',
         category: 'AI / Machine Learning',
@@ -105,6 +122,7 @@ const personalLibrary = [
 
     // Databases & Backend
     {
+        key: 'Designing Data-Intensive Applications',
         name: 'Designing Data-Intensive Applications',
         author: 'Martin Kleppmann',
         category: 'Databases / Backend',
@@ -112,6 +130,7 @@ const personalLibrary = [
         takeaways: 'Learned distributed system principles, data modeling, consistency models, and designing fault-tolerant architectures.'
     },
     {
+        key: 'PostgreSQL',
         name: 'PostgreSQL',
         author: 'Pavel Luzanov',
         category: 'Databases',
@@ -119,6 +138,7 @@ const personalLibrary = [
         takeaways: 'Learned SQL queries, indexing, transactions, performance tuning, and database best practices.'
     },
     {
+        key: 'SQL Antipatterns',
         name: 'SQL Antipatterns',
         author: 'Bill Karwin',
         category: 'Databases',
@@ -128,6 +148,7 @@ const personalLibrary = [
 
     // Embedded Systems
     {
+        key: 'Arduino Microcontrollers Programming',
         name: 'Arduino Microcontrollers Programming',
         author: 'Ulli Sommer',
         category: 'Embedded Systems',
@@ -137,6 +158,7 @@ const personalLibrary = [
 
     // Operating Systems
     {
+        key: 'Modern Operating Systems',
         name: 'Modern Operating Systems',
         author: 'Andrew S. Tanenbaum',
         category: 'Operating Systems',
@@ -145,27 +167,19 @@ const personalLibrary = [
     }
 ];
 
-const pathBase = '../assets/bookCovers/'
-const imageSize = 96
-const fileExtention = '.png'
+export function loadBooks() {
 
-export function loadSkills(doc) {
-    const iconTemplate = doc.getElementById('bookCoverTemplate')
+    for (const book of personalLibrary) {
+        const renderedTemplate = Mustache.render(bookTemplate, {
+            img: {
+                source: `../assets/bookCovers/${book.key}.png`,
+                alt: book.name,
+                height: '150px'
+            },
+            book
+        })
 
-    for (const iconShortcut of iconPaths) {
-
-        const iconClone = iconTemplate.content.cloneNode(true)
-        // const img = document.createElement('img')
-
-        const img = iconClone.querySelector('img')
-        img.src = `${pathBase}${iconShortcut}-${imageSize}${fileExtention}`
-        img.alt = iconShortcut
-        img.height = 70
-
-        const imgText = iconClone.querySelector('p')
-        imgText.textContent = iconShortcut.replaceAll('-', ' ')
-
-        $('#icons').append(iconClone)
+        $('#bookIcons').append(renderedTemplate)
     }
 
 }

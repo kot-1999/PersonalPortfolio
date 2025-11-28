@@ -1,3 +1,4 @@
+import { loadBooks } from './library.js';
 import { loadSkills } from './skills.js';
 
 async function renderNavigation() {
@@ -36,6 +37,7 @@ $(document).ready ( function () {
         const doc = new DOMParser().parseFromString(await res.text(), 'text/html');
         $('#content').empty()
         $('#content').append(doc.getElementById('libraryPage').innerHTML);
+        loadBooks(doc)
     });
 
     $(document).on ('click', '#navEmailMe', async function () {
