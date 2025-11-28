@@ -1,3 +1,6 @@
+import Mustache from './mustache.js';
+import { skillTemplate } from './templates.js';
+
 const iconPaths = [
     'AWS',
     'BullMQ',
@@ -38,23 +41,21 @@ const pathBase = '../assets/icons/'
 const imageSize = 96
 const fileExtention = '.png'
 
-export function loadSkills(doc) {
-    const iconTemplate = doc.getElementById('iconTemplate')
+export function loadSkills() {
 
     for (const iconShortcut of iconPaths) {
+        const renderedTemplate = Mustache.render(skillTemplate, {
+            img: {
+                src: `${pathBase}${iconShortcut}-${imageSize}${fileExtention}`,
+                alt: iconShortcut,
+                height: '70px'
+            },
+            skill: {
+                name: iconShortcut
+            }
+        })
 
-        const iconClone = iconTemplate.content.cloneNode(true)
-        // const img = document.createElement('img')
-
-        const img = iconClone.querySelector('img')
-        img.src = `${pathBase}${iconShortcut}-${imageSize}${fileExtention}`
-        img.alt = iconShortcut
-        img.height = 70
-
-        const imgText = iconClone.querySelector('p')
-        imgText.textContent = iconShortcut.replaceAll('-', ' ')
-
-        $('#icons').append(iconClone)
+        $('#icons').append(renderedTemplate)
     }
 
 }
