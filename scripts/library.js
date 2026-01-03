@@ -173,8 +173,7 @@ export function loadBooks() {
         const renderedTemplate = Mustache.render(bookTemplate, {
             img: {
                 source: `../assets/bookCovers/${book.key}.png`,
-                alt: book.name,
-                height: '150px'
+                alt: book.name
             },
             book
         })
