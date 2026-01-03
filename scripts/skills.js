@@ -10,7 +10,6 @@ const iconPaths = [
     'Express-js',
     'i18next',
     'JavaScript',
-    'LinkedIn',
     'MongoDB',
     'NodeJS' ,
     'PostgreSQL',
@@ -21,10 +20,8 @@ const iconPaths = [
     'TypeScript',
     'Bitbucket',
     'CloudWatch',
-    'Dev-Community',
     'EC2',
     'Eslint',
-    'GitHub',
     'IAM',
     'Jira',
     'Linux',
@@ -38,7 +35,6 @@ const iconPaths = [
 ]
 
 const pathBase = '../assets/icons/'
-const imageSize = 96
 const fileExtention = '.png'
 
 export function loadSkills() {
@@ -46,7 +42,8 @@ export function loadSkills() {
     for (const iconShortcut of iconPaths) {
         const renderedTemplate = Mustache.render(skillTemplate, {
             img: {
-                src: `${pathBase}${iconShortcut}-${imageSize}${fileExtention}`,
+                srcLarge: `${pathBase}${iconShortcut}-96${fileExtention}`,
+                srcSmall: `${pathBase}${iconShortcut}-48${fileExtention}`,
                 alt: iconShortcut,
                 height: '70px'
             },
