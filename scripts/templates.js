@@ -90,13 +90,14 @@ export const navTemplate = `
 export const skillTemplate = `
     <div class='blockInLine circleAround textCenter mediumSpace'>
         <picture>
-            <source class='techIcon spaceZero'
-                src='{{img.srcSmall}}'
-                media="(max-width: 600px)">
+            <source 
+                class='techIcon spaceZero'
+                srcset='{{img.srcLarge}}'
+                media="(min-width: 600px)">
             <img
                 class='techIcon spaceZero'
                 alt='{{img.alt}}'
-                src='{{img.srcLarge}}'
+                src='{{img.srcSmall}}'
                 height='{{img.height}}'
             >
         </picture>
