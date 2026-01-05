@@ -19,7 +19,6 @@
             <section class='hero'>
                 <h1 class='name fontExtraLarge'>Oleksandr (Alex) Kashytskyi</h1>
                 <h2 class='role fontLarge'>Backend Engineer</h2>
-                <p class='location fontMedium'>London, UK</p>
                 <p class='location fontSmall'>London, UK</p>
             </section>
 
@@ -30,6 +29,11 @@
                     applications serving <strong>10M+ users</strong>, focusing on performance,
                     clean architecture, and long-term maintainability.
                 </p>
+            </section>
+
+            <section class='sectionContent'>
+                <h3>Domains</h3>
+                <p>B2B · B2C · Fintech · E-commerce · Enterprise Systems</p>
             </section>
 
             <div class='sideBySide'>
@@ -58,68 +62,104 @@
                         </ul>
                     </div>
                 </section>
-            </div>
 
-            <section class='domains'>
-                <h3>Domains</h3>
-                <p>B2B · B2C · Fintech · E-commerce · Enterprise Systems</p>
-            </section>
+                <section>
+                    <div class='sectionContent'>
+                        <h3>Education</h3>
+                        <div class='educationItem'>
+                            <p>MSc Web Development 2025 – Present</p>
+                            <p>University of Roehampton, London</p>
+
+                            <p>BSc Computer Science 2019 – 2022</p>
+                            <p>Technical University of Košice</p>
+                            <p>Thesis: Implementation of OpenAI environment</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class='sectionContent'>
+                        <h3>Experience Summary</h3>
+                        <p>
+                            Backend Engineer with commercial experience delivering and maintaining
+                            production systems for large-scale e-commerce, fintech, and enterprise
+                            applications. Worked on high-traffic products used by millions of users
+                            across Europe in cross-functional Agile teams.
+                        </p>
+                    </div> 
+                </section>
+            </div>
         </div>
 
         <footer class='footer'>
             <div class='footer-links'>
                 <a
-                    class='footer-link'
+                    class='footerLink'
                     href='https://github.com/kot-1999'
                     target='_blank'
                 >
-                    <img
-                        class='footer-icon'
-                        alt='GitHub Icon'
-                        src='../assets/icons/github-24.png'
-                    >
+                    <picture>
+                        <source
+                            media='(min-width: 600px)'
+                            srcset='../assets/socialMedia/GitHub-96.png'
+                        >
+                        <img
+                            class='techIcon spaceZero'
+                            alt='github icon'
+                            height='40rem'
+                            src='../assets/socialMedia/GitHub-48.png'
+                        >
+                    </picture>
                     <span>GitHub</span>
                 </a>
 
                 <a
-                    class='footer-link'
+                    class='footerLink'
                     href='https://www.linkedin.com/in/oleksandr-kashytskyi-07974b22b/'
                     target='_blank'
                 >
-                    <img
-                        class='footer-icon'
-                        alt='LinkedIn Icon'
-                        src='../assets/icons/linkedin-24.png'
-                    >
+                    <picture>
+                        <source
+                            media='(min-width: 600px)'
+                            srcset='../assets/socialMedia/LinkedIn-96.png'
+                        >
+                        <img
+                            class='techIcon spaceZero'
+                            alt='LinkedIn Icon'
+                            height='40rem'
+                            src='../assets/socialMedia/LinkedIn-48.png'
+                        >
+                    </picture>
                     <span>LinkedIn</span>
                 </a>
 
                 <a
-                    class='footer-link'
+                    class='footerLink'
                     href='https://dev.to/oleksandr_kashytskyi_a630'
                     target='_blank'
                 >
-                    <img
-                        class='footer-icon'
-                        alt='Dev.to Icon'
-                        src='../assets/icons/devto-24.png'
-                    >
+                    <picture>
+                        <source
+                            media='(min-width: 600px)'
+                            srcset='../assets/socialMedia/Dev-Community-96.png'
+                        >
+                        <img
+                            class='techIcon spaceZero'
+                            alt='Dev.to Icon'
+                            height='40rem'
+                            src='../assets/socialMedia/Dev-Community-48.png'
+                        >
+                    </picture>
                     <span>Dev.to</span>
                 </a>
-
-                <a class='footer-link' href='mailto:sashakashytskyy@gmail.com'>
-                    <img
-                        class='footer-icon'
-                        alt='Email Icon'
-                        src='../assets/icons/email-24.png'
-                    >
-                    <span>Email</span>
-                </a>
             </div>
-            <p>© 2026 Oleksandr Kashytskyi</p>
+            <p>© <span id='currentYear'></span> Oleksandr Kashytskyi</p>
         </footer>
 
         <script type='module' src='../scripts/nav.js'></script>
+        <script>
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        </script>
     </body>
 </html>
 <template id='library'>
