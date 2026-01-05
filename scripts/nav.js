@@ -6,6 +6,10 @@ async function renderNavigation() {
     $('#body').prepend(navTemplate);
 }
 
+function showContent() {
+    $('#content').css('visibility', 'visible');
+}
+
 renderNavigation()
 
 $(document).ready ( function () {
@@ -32,4 +36,36 @@ $(document).ready ( function () {
         $('#content').empty()
         $('#content').append(doc.getElementById('###').innerHTML);
     });
+});
+
+function renderFromHash() {
+    const hash = window.location.hash;
+
+    $('#content').empty();
+
+    switch (hash) {
+    case '#projects':
+        $('#content').append(projectsTemplate);
+        break;
+
+    case '#techStack':
+        $('#content').append(techStackTemplate);
+        loadSkills();
+        break;
+
+    case '#library':
+        $('#content').append(libraryPageTemplate);
+        loadBooks();
+        break;
+
+    default:
+        // default = main page
+        // do nothing, index.html content stays
+        break;
+    }
+}
+
+$(document).ready(function () {
+    renderFromHash()
+    showContent()
 });
