@@ -1,13 +1,7 @@
 /* POSITIONS */
 .spaceZero {
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 .blockInLine {
@@ -207,8 +201,6 @@ html {
     background-color: #111111;
 }
 
-
-
 .navToggle {
     display: none;
     font-size: 1.6rem;
@@ -264,6 +256,7 @@ html {
     display: inline-flex;
     align-items: center;
     border: none;
+    cursor: pointer;
 }
 
 .bookActiveCategory {
@@ -273,22 +266,21 @@ html {
 
 
 #bookIcons {
-    margin: 0;
+    margin: 20px 0px;
+    padding: 0;
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
-    padding: 0 15px;
-
+    gap: 1rem
 }
 
-.libraryItem  {
+.libraryItem {
     justify-content: flex-start;
-
     position: relative;
     width: calc(25% - 20px);
-    margin: 10px;
-    cursor: pointer;
     background-color: #f1f1d3;
+    border-radius: 12px;
+    overflow: visible;
 }
 
 .bookImg {
@@ -299,12 +291,70 @@ html {
 }
 
 .bookImageBlock {
-    height: 40%;
+    height: 330px;
     background-color: #f1f1f1;
+    overflow: visible;
 }
 
 .bookInfo {
-    background-color: red;
+    padding: 0px 5px;
+    position: relative;
+    background: #f1f1d3;
+    height: 170px;
+}
+
+.author {
+    text-align: right;
+}
+
+.bookToggle {
+    position: absolute;
+    bottom: 10px;          /* distance from bottom */
+    left: 50%;
+    transform: translateX(-50%);
+
+    cursor: pointer;
+    background: #4caf50;
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+}
+
+.bookExtra {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    background: #ffffff;
+    padding: 16px;
+    display: none;
+    z-index: 1;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.libraryItem.open .bookExtra {
+    display: block;
+}
+
+.bookExtra {
+    animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media screen and (max-width: 1300px) {
@@ -319,19 +369,41 @@ html {
     }
 }
 
-/*
-    transition: transform 0.5s ease;
-.libraryItem img:hover {*/
-/*    transform: scale(1.1);*/
-/*}*/
-/*
-    animation: zoomIn 0.5s;
-@keyframes zoomIn {*/
-/*    from {transform: scale(0.6);}*/
-/*    to {transform: scale(1);}*/
-/*}*/
 
-/****************************/
+.libraryItem img {
+    transform: scale(1);
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.libraryItem img:hover {
+    transform: scale(1.1);
+}
+
+#lightboxOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000D9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#lightboxOverlay img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+/* MAIN */
+
 .hero {
     margin-bottom: 32px;
 }
@@ -408,6 +480,12 @@ h3 {
 
     display: inline-flex;
     align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+.footerLink:hover {
+    background: #504e4e;
 }
 
 .footerLink span {

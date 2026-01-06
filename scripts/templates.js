@@ -7,12 +7,17 @@ export const bookTemplate =  `
                 src='{{img.source}}'
             >
         </div>
-        <div class='bookInfo'>
+        <div class="bookInfo">
             <h3>{{book.name}}</h3>
-            <p><strong>Author: </strong>{{book.author}}</p>
-            <p><strong>Category: </strong>{{book.category}}</p>
-            <p class='summary'><strong>Summary: </strong>{{book.summary}}</p>
-            <p class='takeaways'><strong>Takeaways: </strong>{{book.takeaways}}</p>
+            <p class="author fontSmall"><strong>{{book.author}}</strong></p>
+        
+            <div class="bookExtra">
+                <p><strong>Category:</strong> {{book.category}}</p>
+                <p class="summary"><strong>Summary:</strong> {{book.summary}}</p>
+                <p class="takeaways"><strong>Takeaways:</strong> {{book.takeaways}}</p>
+            </div>
+        
+            <div class="bookToggle">⌄</div>
         </div>
     </div>`
 
