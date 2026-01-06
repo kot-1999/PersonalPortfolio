@@ -37,40 +37,6 @@ export const navTemplate =  `
     </nav>
 `
 
-// export const navTemplate = `
-//     <div class="navigationBar">
-//         <div class="navigationMenu">≡
-//             <ul>
-//                 <li><a
-//                     id='navMain'
-//                     class='noDecoration'
-//                     href='index.html'
-//                 >Main</a></li>
-//                 <li><a
-//                     id='navProjects'
-//                     class='noDecoration smallSpace blockCenter blockInLine textWhite'
-//                     href='#projects'
-//                 >Projects</a></li>
-//                 <li><a
-//                     id='navTechStack'
-//                     class='noDecoration smallSpace blockCenter blockInLine textWhite'
-//                     href='#techStack'
-//                 >Tech Stack</a></li>
-//                 <li><a
-//                     id='navLibrary'
-//                     class='noDecoration smallSpace blockCenter blockInLine textWhite'
-//                     href='#library'
-//                 >Library</a></li>
-//                 <li><a
-//                     id='navEmailMe'
-//                     class='smallSpace blockCenter blockInLine textWhite'
-//                     href='#emailMe'
-//                 >Email Me</a></li>
-//             </ul>
-//         </div>
-//     </div>
-// `
-
 export const skillTemplate = `
     <div class='blockInLine circleAround textCenter mediumSpace'>
         <picture>
@@ -184,4 +150,21 @@ export const mainPage = `
             </div> 
         </section>
     </div>
+`
+
+export const emailMeTemplate = `
+    <form id="emailMeForm">
+        <h2>Contact Me</h2>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send</button>
+    </form>
 `

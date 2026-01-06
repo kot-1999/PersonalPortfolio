@@ -491,3 +491,46 @@ h3 {
 .footerLink span {
     margin-left: 10px;
 }
+
+/* EMAIL ME */
+
+#emailOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: auto;
+}
+
+#emailMeForm {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+#emailMeForm input,
+#emailMeForm textarea,
+#emailMeForm button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#emailMeForm button {
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}

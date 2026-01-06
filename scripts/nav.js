@@ -1,6 +1,13 @@
 import { loadBooks } from './library.js';
 import { loadSkills } from './skills.js';
-import { libraryPageTemplate, mainPage, navTemplate, projectsTemplate, techStackTemplate } from './templates.js';
+import {
+    emailMeTemplate,
+    libraryPageTemplate,
+    mainPage,
+    navTemplate,
+    projectsTemplate,
+    techStackTemplate
+} from './templates.js';
 
 async function renderNavigation() {
     $('#body').prepend(navTemplate);
@@ -30,11 +37,14 @@ $(document).ready ( function () {
         loadBooks()
     });
 
-    $(document).on ('click', '#navEmailMe', async function () {
-        const res = await fetch('###');
-        const doc = new DOMParser().parseFromString(await res.text(), 'text/html');
-        $('#content').empty()
-        $('#content').append(doc.getElementById('###').innerHTML);
+    $(document).on('click', '#navEmailMe', function () {
+        const overlay = $(`
+        <div id="emailOverlay">
+            ${emailMeTemplate}
+        </div>
+    `);
+
+        $('body').append(overlay);
     });
 
     $(document).on ('click', '#nawMain', async function () {
@@ -76,4 +86,11 @@ $(document).ready(function () {
 
 $('#navToggle').on('click', function () {
     $('#navMenu').toggleClass('open');
+});
+
+// Close EmailME when clicking outside form
+$(document).on('click', '#emailOverlay', function (e) {
+    if (!$(e.target).closest('#emailMeForm').length) {
+        $(this).remove();
+    }
 });
