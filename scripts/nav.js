@@ -1,6 +1,6 @@
 import { loadBooks } from './library.js';
 import { loadSkills } from './skills.js';
-import { libraryPageTemplate, navTemplate, projectsTemplate, techStackTemplate } from './templates.js';
+import { libraryPageTemplate, mainPage, navTemplate, projectsTemplate, techStackTemplate } from './templates.js';
 
 async function renderNavigation() {
     $('#body').prepend(navTemplate);
@@ -36,6 +36,13 @@ $(document).ready ( function () {
         $('#content').empty()
         $('#content').append(doc.getElementById('###').innerHTML);
     });
+
+    $(document).on ('click', '#nawMain', async function () {
+        const res = await fetch('###');
+        const doc = new DOMParser().parseFromString(await res.text(), 'text/html');
+        $('#content').empty()
+        $('#content').append(mainPage);
+    });
 });
 
 function renderFromHash() {
@@ -59,13 +66,12 @@ function renderFromHash() {
         break;
 
     default:
-        // default = main page
-        // do nothing, index.html content stays
+        $('#content').append(mainPage);
         break;
     }
 }
 
 $(document).ready(function () {
-    renderFromHash()
+    renderFromHash();
     showContent()
 });

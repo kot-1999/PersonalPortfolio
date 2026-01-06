@@ -35,6 +35,8 @@
 }
 
 #content {
+    visibility: hidden;
+
     width: 75%;
     height: 100%;
     margin: auto;
@@ -241,6 +243,23 @@ html {
 /*    text-align: center;*/
 /*}*/
 
+.bookCategoryButton {
+    background: #8f8f8f;
+    padding: 10px 20px 10px 20px;
+    margin: 5px;
+    border-radius: 20px;
+
+    display: inline-flex;
+    align-items: center;
+    border: none;
+}
+
+.bookActiveCategory {
+    background: #4caf50; /* or any highlight color you want */
+    color: #fff;         /* optional for contrast */
+}
+
+
 #bookIcons {
     margin: 0;
     box-sizing: border-box;
@@ -381,8 +400,4 @@ h3 {
 
 .footerLink span {
     margin-left: 10px;
-}
-
-#content {
-    visibility: hidden;
 }
