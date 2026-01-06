@@ -38,8 +38,6 @@ $(document).ready ( function () {
     });
 
     $(document).on ('click', '#nawMain', async function () {
-        const res = await fetch('###');
-        const doc = new DOMParser().parseFromString(await res.text(), 'text/html');
         $('#content').empty()
         $('#content').append(mainPage);
     });
@@ -74,4 +72,8 @@ function renderFromHash() {
 $(document).ready(function () {
     renderFromHash();
     showContent()
+});
+
+$('#navToggle').on('click', function () {
+    $('#navMenu').toggleClass('open');
 });

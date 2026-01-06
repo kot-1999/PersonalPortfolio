@@ -152,96 +152,108 @@ html {
         display: block;
     }
 }
+
 /* NAVIGATION BAR */
 
-.navigationBar {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333333;
-}
-
-.navigationMenu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navigationMenu ul li {
-    float: right;
-}
-
-.navigationMenu ul li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+#navLogo {
     text-decoration: none;
 }
 
-.navigationMenu ul li a:hover {
+.navBar {
+    height: 56px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #222;
+    padding: 0px 12px;
+}
+
+.navLeft {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+}
+
+
+.navRight {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    align-items: center;
+    height: 100%;
+}
+
+.navRight li {
+    height: 100%;
+}
+
+.navRight a {
+    color: white;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+
+.navRight a:hover {
     background-color: #111111;
 }
 
-.navigationMenu {
+
+
+.navToggle {
+    display: none;
+    font-size: 1.6rem;
+    background: none;
+    border: none;
     color: white;
-    text-align: right;
-    padding: 14px 16px;
-    text-decoration: none;
+    cursor: pointer;
 }
 
-.navigationMenu ul {
-    display: block;
-}
-
-@media screen and (max-width:768px) {
-    .navigationMenu {
+@media (max-width: 700px) {
+    .navToggle {
         display: block;
-        cursor: pointer;
     }
 
-    .navigationMenu ul {
-        display: none;
+    .navRight {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #222;
+
         flex-direction: column;
+        width: 200px;
+        height: auto;
+        display: none;
+        padding: 0;
+        margin: 0;
+
     }
 
-
-    .navigationMenu:hover ul {
-        display: block;
+    .navRight li,
+    .navRight a {
+        width: 100%;
+        height: auto;
     }
 
+    .navRight a {
+        padding: 10px
+    }
+
+    .navRight.open {
+        display: flex;
+    }
 }
 
 /* LIBRARY */
-
-/*#bookIcons {*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    justify-content: flex-start;*/
-/*}*/
-
-/*.libraryItem {*/
-/*    margin: 5px;*/
-/*    border: 1px solid #ccc;*/
-/*    width: 32%;*/
-/*}*/
-
-/*.libraryItem :hover {*/
-/*    border: 1px solid #777;*/
-/*}*/
-
-/*.libraryItem  img {*/
-/*    width: auto;*/
-/*    height: 400px;*/
-/*}*/
-
-/*.libraryItem {*/
-/*    padding: 15px;*/
-/*    text-align: center;*/
-/*}*/
 
 .bookCategoryButton {
     background: #8f8f8f;

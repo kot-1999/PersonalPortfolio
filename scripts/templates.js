@@ -16,76 +16,55 @@ export const bookTemplate =  `
         </div>
     </div>`
 
-export const navTemplate = `
-    <div class="navigationBar">
-        <div class="navigationMenu">≡
-            <ul>
-                <li><a 
-                    id='navMain'
-                    class='noDecoration'
-                    href='index.html'
-                >Main</a></li>
-                <li><a
-                    id='navProjects'
-                    class='noDecoration smallSpace blockCenter blockInLine textWhite'
-                    href='#projects'
-                >Projects</a></li>
-                <li><a
-                    id='navTechStack'
-                    class='noDecoration smallSpace blockCenter blockInLine textWhite'
-                    href='#techStack'
-                >Tech Stack</a></li>
-                <li><a
-                    id='navLibrary'
-                    class='noDecoration smallSpace blockCenter blockInLine textWhite'
-                    href='#library'
-                >Library</a></li>
-                <li><a
-                    id='navEmailMe'
-                    class='smallSpace blockCenter blockInLine textWhite'
-                    href='#emailMe'
-                >Email Me</a></li>
-            </ul>
-        </div>
-    </div>
+export const navTemplate =  `
+    <nav class="navBar">
+        <a id="navLogo" class="navLeft" href="index.html">/:AlexK</a>
+        
+        <button class="navToggle" id="navToggle">≡</button>
+    
+        <ul class="navRight" id="navMenu">
+            <li><a id="navMain" href="index.html">Main</a></li>
+            <li><a id="navProjects" href="#projects">Projects</a></li>
+            <li><a id="navTechStack" href="#techStack">Tech Stack</a></li>
+            <li><a id="navLibrary" href="#library">Library</a></li>
+            <li><a id="navEmailMe" href="#emailMe">Email Me</a></li>
+        </ul>
+    </nav>
 `
-// <div class='stickyTop blockInLine'>
-//     <a
-//         id='navMain'
-//         class='noDecoration smallSpace blockCenter blockInLine textWhite'
-//         href='index.html'
-//     >
-//         Main
-//     </a>
-//     <a
-//         id='navProjects'
-//         class='noDecoration smallSpace blockCenter blockInLine textWhite'
-//         href='#'
-//     >
-//         <span class='smallSpace blockCenter blockInLine textWhite'>Projects</span>
-//     </a>
-//     <a
-//         id='navTechStack'
-//         class='noDecoration smallSpace blockCenter blockInLine textWhite'
-//         href='#techStack'
-//     >
-//         Technology Stack
-//     </a>
-//
-//     <a
-//         id='navLibrary'
-//         class='noDecoration smallSpace blockCenter blockInLine textWhite'
-//         href='#'
-//     >
-//         Personal Library
-//     </a>
-//
-//     <a
-//         id='navEmailMe '
-//         class='smallSpace blockCenter blockInLine textWhite'
-//         href='#'
-//     >Contact Me</a>
-// </div>
+
+// export const navTemplate = `
+//     <div class="navigationBar">
+//         <div class="navigationMenu">≡
+//             <ul>
+//                 <li><a
+//                     id='navMain'
+//                     class='noDecoration'
+//                     href='index.html'
+//                 >Main</a></li>
+//                 <li><a
+//                     id='navProjects'
+//                     class='noDecoration smallSpace blockCenter blockInLine textWhite'
+//                     href='#projects'
+//                 >Projects</a></li>
+//                 <li><a
+//                     id='navTechStack'
+//                     class='noDecoration smallSpace blockCenter blockInLine textWhite'
+//                     href='#techStack'
+//                 >Tech Stack</a></li>
+//                 <li><a
+//                     id='navLibrary'
+//                     class='noDecoration smallSpace blockCenter blockInLine textWhite'
+//                     href='#library'
+//                 >Library</a></li>
+//                 <li><a
+//                     id='navEmailMe'
+//                     class='smallSpace blockCenter blockInLine textWhite'
+//                     href='#emailMe'
+//                 >Email Me</a></li>
+//             </ul>
+//         </div>
+//     </div>
+// `
 
 export const skillTemplate = `
     <div class='blockInLine circleAround textCenter mediumSpace'>
