@@ -37,21 +37,23 @@ export const navTemplate =  `
     </nav>
 `
 
-export const skillTemplate = `
-    <div class='blockInLine circleAround textCenter mediumSpace'>
-        <picture>
-            <source 
-                class='techIcon spaceZero'
-                srcset='{{img.srcLarge}}'
-                media="(min-width: 600px)">
-            <img
-                class='techIcon spaceZero'
-                alt='{{img.alt}}'
-                src='{{img.srcSmall}}'
-                height='{{img.height}}'
-            >
-        </picture>
-        <p class='fontSmall spaceZero'>{{skill.name}}</p>
+export const skillCardTemplate = `
+    <div class="skillCard">
+        <div class="skillIcon">
+            <picture>
+                <source
+                    srcset="{{img.srcLarge}}"
+                    media="(min-width: 600px)">
+                <img
+                    class="techIcon"
+                    alt="{{img.alt}}"
+                    src="{{img.srcSmall}}"
+                    height="{{img.height}}">
+            </picture>
+        </div>
+
+        <p class="skillName fontBig">{{skill.name}}</p>
+        <p class="skillContext">{{skill.context}}</p>
     </div>
 `
 
@@ -63,13 +65,21 @@ export const libraryPageTemplate = `
         I hope you find some inspiration here!
     </p>
     
-    <div id="categories"></div>
+    <div id="libraryCategories"></div>
     <div id='bookIcons'></div>
 `
 
-export const techStackTemplate = `
+export const techStackPageTemplate = `
     <h2>Technological Stack</h2>
-    <div id='icons' class='width80 blockCenter'></div>
+    <p>
+        From server-side frameworks to cloud services, these
+        are the tools I use to build robust applications and keep
+        systems running smoothly. These are the tools and technologies
+        I rely on daily to build scalable backend systems, maintain
+        databases, and ensure observability and reliability.
+    </p>
+    <div id="techCategories"></div>
+    <div id='techIcons' class='width80 blockCenter'></div>
 `
 
 export const projectsTemplate = `

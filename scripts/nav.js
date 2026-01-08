@@ -6,7 +6,7 @@ import {
     mainPage,
     navTemplate,
     projectsTemplate,
-    techStackTemplate
+    techStackPageTemplate
 } from './templates.js';
 
 async function renderNavigation() {
@@ -27,7 +27,7 @@ $(document).ready ( function () {
 
     $(document).on ('click', '#navTechStack', async function () {
         $('#content').empty()
-        $('#content').append(techStackTemplate);
+        $('#content').append(techStackPageTemplate);
         loadSkills()
     });
 
@@ -64,7 +64,7 @@ function renderFromHash() {
         break;
 
     case '#techStack':
-        $('#content').append(techStackTemplate);
+        $('#content').append(techStackPageTemplate);
         loadSkills();
         break;
 
