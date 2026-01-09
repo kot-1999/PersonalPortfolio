@@ -38,7 +38,7 @@ export const navTemplate =  `
 `
 
 export const skillCardTemplate = `
-    <div class="skillCard">
+    <div class="skillCard {{skill.borderColor}}">
         <div class="skillIcon">
             <picture>
                 <source
@@ -79,6 +79,11 @@ export const techStackPageTemplate = `
         databases, and ensure observability and reliability.
     </p>
     <div id="techCategories"></div>
+    <div id='technologyProficiency'>
+        <p class="technologyProficiencyText borderBasic">Basic</p>
+        <p class="technologyProficiencyText borderAdvanced">Advacned</p>
+        <p class="technologyProficiencyText borderExpert">Expert</p>
+    </div>
     <div id='techIcons' class='width80 blockCenter'></div>
 `
 

@@ -386,7 +386,8 @@ export function loadSkills(selectedCategory = SKILL_CATEGORY.ALL) {
             },
             skill: {
                 name: skill.key.replaceAll('-', ' ').replaceAll('Sharp', '#'),
-                context: skill.context
+                context: skill.context,
+                borderColor: 'border' + skill.proficiency
             }
         })
 
