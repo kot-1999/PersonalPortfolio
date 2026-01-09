@@ -17,7 +17,7 @@ export const bookTemplate =  `
                 <p class="takeaways"><strong>Takeaways:</strong> {{book.takeaways}}</p>
             </div>
         
-            <div class="bookToggle">⌄</div>
+            <div class="bookToggle">▼</div>
         </div>
     </div>`
 
