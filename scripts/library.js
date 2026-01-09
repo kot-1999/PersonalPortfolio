@@ -107,7 +107,7 @@ const personalLibrary = [
     // AI & Machine Learning
     {
         key: 'Deep Reinforcement Learning with Python',
-        name: 'Deep Reinforcement Learning with Python',
+        name: 'Deep Reinforcement Learning',
         author: 'Sudharsan Ravichandiran',
         category: BOOK_CATEGORY.AI,
         summary: 'Practical guide to reinforcement learning algorithms and agent-based models using Python.',

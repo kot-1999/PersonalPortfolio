@@ -55,7 +55,8 @@
 /* FONTS */
 
 html {
-    font-size: 20px; /* default is usually 16px */
+    font-size: 22px; /* default is usually 16px */
+    font-family: 'Inconsolata', monospace;
 }
 
 .fontSmall {
@@ -250,22 +251,39 @@ html {
 /* LIBRARY */
 
 #bookIcons {
-    margin: 20px 0px;
+    margin: 30px 0px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
     padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
     gap: 1rem
 }
 
 .libraryItem {
     justify-content: flex-start;
-    position: relative;
-    width: calc(25% - 1rem);
-    background-color: #f1f1d3;
-
+    box-sizing: border-box;
     border-radius: 12px;
+    border: 3px solid #111111;
     overflow: visible;
+    padding: 5px
+}
+
+@media (max-width: 1300px) {
+    #bookIcons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    #bookIcons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    #bookIcons {
+        grid-template-columns: 1fr;
+    }
 }
 
 .bookImg {
@@ -276,16 +294,15 @@ html {
 }
 
 .bookImageBlock {
+    padding-top: 10px;
     height: 330px;
-    background-color: #f1f1f1;
     overflow: visible;
 }
 
 .bookInfo {
     padding: 0px 5px;
     position: relative;
-    background: #f1f1d3;
-    height: 170px;
+    height: 188px;
 }
 
 .author {
@@ -299,7 +316,7 @@ html {
     transform: translateX(-50%);
 
     cursor: pointer;
-    background: #4caf50;
+    background: #8f8f8f;
     width: 24px;
     height: 24px;
     padding: 10px;
@@ -339,18 +356,6 @@ html {
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-@media screen and (max-width: 1300px) {
-    .libraryItem {
-        width: calc(50% - 20px);
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .libraryItem  {
-        width: calc(100% - 20px);
     }
 }
 
@@ -523,11 +528,11 @@ h3 {
 /* TECH STACK */
 
 #techIcons {
+    margin: 30px 0px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
     padding: 0;
-    margin: 0;
     width: 100%;
 }
 
