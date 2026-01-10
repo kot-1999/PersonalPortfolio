@@ -478,6 +478,10 @@ h3 {
     background: #504e4e;
 }
 
+.footerLink:active {
+    background: #302f2f;
+}
+
 .footerLink span {
     margin-left: 10px;
 }
@@ -627,6 +631,17 @@ h3 {
     align-items: center;
     border: none;
     cursor: pointer;
+
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+.categoryButton:hover {
+    background: #504e4e;
+}
+
+.categoryButton:active {
+    background: #302f2f;
 }
 
 .activeCategory {
@@ -644,7 +659,7 @@ h3 {
 
 /* LEFT SIDE */
 .projectsList {
-    width: 350px;
+    width: 300px;
     background: #f5f5f5;
     border-right: 1px solid #ddd;
     transition: transform 0.3s ease;
@@ -663,7 +678,7 @@ h3 {
 }
 
 .projectItem.active {
-    background: #e0e0e0;
+    background: #5bd215;
     font-weight: bold;
 }
 
@@ -678,10 +693,84 @@ h3 {
     flex-direction: column;
 }
 
-/* RIGHT SIDE */
+.projectsToggle {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: left top;
+    letter-spacing: 2px;
+
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    z-index: 30;
+    font-weight: bold;
+
+    transition: transform 0.3s ease, left 0.3s ease;
+}
+
+.projectsLayout.showProjects .projectDetails {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.projectsLayout.showProjects .projectsToggle {
+    left: 310px;
+}
+
+@media (max-width: 1000px) {
+    .projectsList {
+        position: fixed;
+        top: 56px;
+        left: 0;
+        height: 100%;
+        transform: translateX(-200%);
+        z-index: 10;
+        box-shadow: 4px 0 12px rgba(0,0,0,0.2);
+    }
+
+    .projectsLayout.showProjects .projectsList {
+        transform: translateX(-20%);
+    }
+
+    .projectsToggle {
+        display: block;
+    }
+
+    .projectsLayout.showProjects .projectsToggle {
+        left: 300px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .projectsLayout.showProjects .projectsList {
+        transform: translateX(-3%);
+    }
+
+    .projectsLayout.showProjects .projectsToggle {
+        left: 290px;
+    }
+}
+
+@media (min-width: 1001px) {
+    .projectsToggle {
+        display: none;
+    }
+
+    .projectsList {
+        position: static;
+        transform: none;
+    }
+}
+
+/* PROJECT DETAILS */
 .projectDetails {
     flex: 1;
-    padding: 24px;
+    padding-left: 20px;
 }
 
 .projectHeader {
@@ -729,74 +818,6 @@ h3 {
     border-radius: 12px;
 }
 
-.projectsToggle {
-    position: fixed;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%) rotate(-90deg);
-    transform-origin: left top;
-    letter-spacing: 2px;
-
-    background: #111;
-    color: #fff;
-    border: none;
-    padding: 10px 16px;
-    cursor: pointer;
-    z-index: 30;
-    font-weight: bold;
-
-    transition: transform 0.3s ease, left 0.3s ease;
-}
-
-.projectsLayout.showProjects .projectDetails {
-    opacity: 0.4;
-    pointer-events: none;
-}
-
-.projectsLayout.showProjects .projectsToggle {
-    left: 340px;
-}
-
-@media (max-width: 1000px) {
-    .projectsList {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        transform: translateX(-200%);
-        z-index: 10;
-        box-shadow: 4px 0 12px rgba(0,0,0,0.2);
-    }
-
-    .projectsLayout.showProjects .projectsList {
-        transform: translateX(-20%);
-    }
-
-    .projectsToggle {
-        display: block;
-    }
-
-}
-
-@media (max-width: 600px) {
-
-    .projectsLayout.showProjects .projectsList {
-        transform: translateX(-2%);
-    }
-
-}
-
-@media (min-width: 1001px) {
-    .projectsToggle {
-        display: none;
-    }
-
-    .projectsList {
-        position: static;
-        transform: none;
-    }
-}
-
 @media (max-width: 600px) {
     .projectHeader {
         flex-direction: column;
@@ -816,7 +837,9 @@ h3 {
         object-fit: contain;
     }
 }
-    /* TECH BADGES */
+
+/* TECH BADGES */
+
 .techBadges {
     display: flex;
     flex-wrap: wrap;
