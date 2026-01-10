@@ -653,8 +653,9 @@ h3 {
 
 .projectsLayout {
     display: flex;
-    position: relative;
+    flex-direction: row;
     height: 100%;
+    align-items: stretch;
 }
 
 /* LEFT SIDE */
@@ -663,6 +664,8 @@ h3 {
     background: #f5f5f5;
     border-right: 1px solid #ddd;
     transition: transform 0.3s ease;
+    max-height: 750px;
+    overflow-y: auto;
 }
 
 .projectItem {
@@ -724,7 +727,7 @@ h3 {
 @media (max-width: 1000px) {
     .projectsList {
         position: fixed;
-        top: 56px;
+        top: 15%;
         left: 0;
         height: 100%;
         transform: translateX(-200%);
@@ -732,8 +735,12 @@ h3 {
         box-shadow: 4px 0 12px rgba(0,0,0,0.2);
     }
 
+    .projectsLayout {
+        flex-direction: column;
+    }
+
     .projectsLayout.showProjects .projectsList {
-        transform: translateX(-20%);
+        transform: translateX(0%);
     }
 
     .projectsToggle {
