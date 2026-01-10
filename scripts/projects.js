@@ -1,4 +1,10 @@
-export const PROJECTS = [
+import Mustache from './mustache.js';
+import {
+    projectSideItemTemplate,
+    projectDetailsTemplate
+} from './templates.js';
+
+export const projects = [
     // -------------------
     // GoodRequest Projects
     // -------------------
@@ -328,3 +334,41 @@ export const PROJECTS = [
         techStack: ['JavaScript', 'React-Native', 'HTML', 'CSS']
     }
 ]
+
+function renderProjectDetails(project) {
+    const renderedDetails = Mustache.render(projectDetailsTemplate, project);
+    $('#projectDetails').html(renderedDetails);
+}
+
+export function loadProjectsPage() {
+    const $list = $('#projectsList');
+    const $details = $('#projectDetails');
+
+    $list.empty();
+    $details.empty();
+
+    // Render sidebar
+    projects.forEach((project, index) => {
+        const renderedItem = Mustache.render(projectSideItemTemplate, {
+            ...project,
+            active: index === 0,
+            logo: project.logo || 'assets/projects/default.png'
+        });
+
+        $list.append(renderedItem);
+    });
+
+    // Render first project by default
+    renderProjectDetails(projects[0]);
+
+    // Click handling
+    $list.on('click', '.projectItem', function () {
+        const projectName = $(this).data('project');
+
+        $('.projectItem').removeClass('active');
+        $(this).addClass('active');
+
+        const project = projects.find((p) => p.name === projectName);
+        renderProjectDetails(project);
+    });
+}

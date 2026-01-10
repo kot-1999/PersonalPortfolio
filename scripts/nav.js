@@ -1,11 +1,12 @@
 import { loadBooks } from './library.js';
+import { loadProjectsPage } from './projects.js';
 import { loadSkills } from './skills.js';
 import {
     emailMeTemplate,
     libraryPageTemplate,
     mainPage,
     navTemplate,
-    projectsTemplate,
+    projectsPageTemplate,
     techStackPageTemplate
 } from './templates.js';
 
@@ -22,7 +23,8 @@ renderNavigation()
 $(document).ready ( function () {
     $(document).on ('click', '#navProjects', async function () {
         $('#content').empty()
-        $('#content').append(projectsTemplate);
+        $('#content').append(projectsPageTemplate);
+        loadProjectsPage()
     });
 
     $(document).on ('click', '#navTechStack', async function () {
@@ -60,7 +62,8 @@ function renderFromHash() {
 
     switch (hash) {
     case '#projects':
-        $('#content').append(projectsTemplate);
+        $('#content').append(projectsPageTemplate);
+        loadProjectsPage()
         break;
 
     case '#techStack':

@@ -31,7 +31,7 @@
 #content {
     visibility: hidden;
 
-    width: 75%;
+    width: 80%;
     height: 100%;
     margin: 0 auto;
 }
@@ -632,4 +632,71 @@ h3 {
 .activeCategory {
     background: #4caf50; /* or any highlight color you want */
     color: #fff;         /* optional for contrast */
+}
+
+/* PROJECTS */
+
+.projectsLayout {
+    display: flex;
+}
+
+/* LEFT SIDE */
+.projectsList {
+    width: 25%;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+}
+
+.projectItem {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.projectItem:hover {
+    background: #f2f2f2;
+}
+
+.projectItem.active {
+    background: #e0e0e0;
+    font-weight: bold;
+}
+
+.projectLogo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.projectMeta {
+    display: flex;
+    flex-direction: column;
+}
+
+/* RIGHT SIDE */
+.projectDetails {
+    width: 75%;
+    height: auto;
+    padding: 24px;
+}
+
+.projectHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.projectInfo p {
+    margin: 4px 0;
+}
+
+.techBadges span {
+    display: inline-block;
+    background: #eee;
+    padding: 4px 10px;
+    margin: 4px;
+    border-radius: 12px;
+    font-size: 0.85rem;
 }

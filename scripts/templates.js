@@ -87,10 +87,6 @@ export const techStackPageTemplate = `
     <div id='techIcons' class='width80 blockCenter'></div>
 `
 
-export const projectsTemplate = `
-    <h2>Projects</h2>
-`
-
 export const mainPage = `
     <section class='hero'>
         <h1 class='name fontExtraLarge'>Oleksandr (Alex) Kashytskyi</h1>
@@ -182,4 +178,83 @@ export const emailMeTemplate = `
 
         <button type="submit">Send</button>
     </form>
+`
+
+export const projectsPageTemplate = `
+    <h2>Projects</h2>
+    <p>
+        Projects that reflect my growth as a software engineer — from production 
+        systems used by millions to experimental ideas built for learning and exploration.
+    </p>
+
+    <div class="projectsLayout">
+        <aside class="projectsList" id="projectsList"></aside>
+        <section class="projectDetails" id="projectDetails"></section>
+    </div>
+`
+
+export const projectSideItemTemplate = `
+    <div class="projectItem {{#active}}active{{/active}}" data-project="{{name}}">
+        <img src="{{logo}}" alt="{{name}} logo" class="projectLogo">
+        <div class="projectMeta">
+            <span class="projectName">{{name}}</span>
+            <span class="projectCategory">{{category}}</span>
+        </div>
+    </div>
+`
+export const projectDetailsTemplate = `
+    <div class='projectDetails'>
+        <header class='projectHeader'>
+            <h2>{{name}}</h2>
+            <a href="{{link}}" target='_blank'>View source</a>
+        </header>
+    
+        <div class='projectInfo'>
+            <p><strong>Role:</strong> {{role}}</p>
+            <p><strong>Time spent:</strong> {{timeSpent}}</p>
+            <p><strong>Team:</strong> {{team}}</p>
+            <p><strong>Status:</strong> {{status}}</p>
+        </div>
+    
+        <section>
+            <h3>Overview</h3>
+            <p>{{overview}}</p>
+        </section>
+    
+        <section>
+            <h3>Responsibilities</h3>
+            <ul>
+                {{#responsibilities}}
+                <li>{{.}}</li>
+                {{/responsibilities}}
+            </ul>
+        </section>
+    
+        <section>
+            <h3>Challenges</h3>
+            <ul>
+                {{#challenges}}
+                <li>{{.}}</li>
+                {{/challenges}}
+            </ul>
+        </section>
+    
+        <section>
+            <h3>Impact</h3>
+            <ul>
+                {{#impact}}
+                <li>{{.}}</li>
+                {{/impact}}
+            </ul>
+        </section>
+    
+        <section>
+            <h3>Tech Stack</h3>
+            <div class='techBadges'>
+                {{#techStack}}
+                <span>{{.}}</span>
+                {{/techStack}}
+            </div>
+        </section>
+    </div>
 `
