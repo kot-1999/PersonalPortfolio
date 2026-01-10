@@ -199,7 +199,7 @@ export const projectSideItemTemplate = `
         <img src="{{icon}}" alt="{{iconAlt}} logo" class="projectLogo">
         <div class="projectMeta">
             <span class="projectName">{{name}}</span>
-            <span class="projectCategory">{{category}}</span>
+            <span class="projectCategory fontSmall">{{category}}</span>
         </div>
     </div>
 `
