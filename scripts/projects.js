@@ -13,7 +13,7 @@ export const projects = [
         category: 'GoodRequest',
         link: 'https://www.goodrequest.com/work/notino',
         role: 'Backend Engineer',
-        timeSpent: '6 months',
+        timeSpent: '18 months',
         team: 'Collaboration between Project Managers, Backend, Frontend, QA testers, and Designers',
         overview: `Developed scalable backend services for Notino, one of the leading European
             e-commerce platforms for beauty and personal care. Focused on building high-performance 
@@ -40,7 +40,8 @@ export const projects = [
         kpi: ['API latency', 'Uptime', 'Transactions per second'],
         metricsLinks: ['https://www.goodrequest.com/work/notino'],
         status: 'Live',
-        techStack: ['NodeJS', 'TypeScript', 'RabbitMQ', 'Sentry', 'Express-js', 'PostgreSQL', 'Redis', 'Docker', 'AWS-EC2', 'AWS-RDS', 'Sequelize']
+        techStack: ['NodeJS', 'TypeScript', 'RabbitMQ', 'Sentry', 'Express-js', 'PostgreSQL', 'Redis', 'Docker', 'EC2', 'RDS', 'Sequelize'],
+        logoBase: 'notino'
     },
     {
         name: 'KIA',
@@ -71,7 +72,8 @@ export const projects = [
         kpi: ['Response time', 'Data accuracy', 'User retention'],
         metricsLinks: ['https://www.goodrequest.com/work/kia-en'],
         status: 'Live',
-        techStack: ['NodeJS', 'TypeScript', 'Express-js', 'PostgreSQL', 'Redis', 'Docker', 'Sequelize']
+        techStack: ['NodeJS', 'TypeScript', 'Express-js', 'PostgreSQL', 'Redis', 'Docker', 'Sequelize'],
+        logoBase: 'kia'
     },
     {
         name: 'Aivodot',
@@ -103,14 +105,15 @@ export const projects = [
         kpi: ['Data throughput', 'Response latency', 'Model success rate'],
         metricsLinks: ['https://www.goodrequest.com/work/aivodot'],
         status: 'Live',
-        techStack: ['Stripe', 'NodeJS', 'TypeScript', 'Express-js', 'MongoDB', 'Redis', 'Docker', 'S3', 'EC2', 'CloudWatch', 'Sentry', 'Sequelize']
+        techStack: ['Stripe', 'NodeJS', 'TypeScript', 'Express-js', 'MongoDB', 'Redis', 'Docker', 'S3', 'EC2', 'CloudWatch', 'Sentry', 'Sequelize'],
+        logoBase: 'aivodot'
     },
     {
         name: 'Benzinol',
         category: 'GoodRequest',
         link: 'https://www.goodrequest.com/blog/grpartners-benzinol-apps',
         role: 'Backend Engineer',
-        timeSpent: '3 months',
+        timeSpent: '6 months',
         team: 'Collaboration between Project Managers, Backend, Frontend, QA testers, and Designers',
         overview: `Developed backend APIs for fuel and logistics tracking mobile app.
             Focused on real-time location tracking, performance optimization, and API
@@ -134,7 +137,8 @@ export const projects = [
         kpi: ['API latency', 'Uptime', 'Location update frequency'],
         metricsLinks: ['https://www.goodrequest.com/blog/grpartners-benzinol-apps'],
         status: 'Live',
-        techStack: ['NodeJS', 'TypeScript', 'Express-js', 'PostgreSQL', 'Redis', 'Docker']
+        techStack: ['NodeJS', 'TypeScript', 'Express-js', 'PostgreSQL', 'Redis', 'Docker'],
+        logoBase: 'benzinol'
     },
 
     // -------------------
@@ -165,7 +169,8 @@ export const projects = [
         kpi: ['Realtime update frequency', 'Functional prototypes completed'],
         metricsLinks: ['https://github.com/Dmytro27Ind/city-desk?tab=readme-ov-file'],
         status: 'Prototype',
-        techStack: ['NodeJS', 'React-Native', 'JavaScript', 'HTML', 'CSS', 'Leaflet', 'Bootstrap']
+        techStack: ['NodeJS', 'React-Native', 'JavaScript', 'HTML', 'CSS', 'Leaflet', 'Bootstrap'],
+        logoBase: 'city-desk'
     },
     {
         name: 'Way of Memories',
@@ -192,7 +197,8 @@ export const projects = [
         kpi: ['Gameplay stability', 'AR feature integration', 'Player engagement'],
         metricsLinks: ['https://devpost.com/software/way-of-memories'],
         status: 'Prototype',
-        techStack: ['C#-Language', 'Unity']
+        techStack: ['CSharp-Language', 'Unity'],
+        logoBase: 'way-of-memmories'
     },
 
     // -------------------
@@ -203,7 +209,7 @@ export const projects = [
         category: 'Personal',
         link: 'https://github.com/kot-1999/express-joi-to-swagger',
         role: 'Solo Developer',
-        timeSpent: '2 weeks',
+        timeSpent: '3 months',
         team: 'Solo',
         overview: `Open-source library converting Joi validation schemas into Swagger/OpenAPI documentation for Express 
             applications. Simplifies API documentation for Node.js developers.`,
@@ -223,14 +229,15 @@ export const projects = [
         kpi: ['GitHub stars', 'Downloads', 'Pull requests'],
         metricsLinks: ['https://github.com/kot-1999/express-joi-to-swagger'],
         status: 'Maintained',
-        techStack: ['NodeJS', 'JavaScript', 'Express-js', 'TypeScript', 'Joi', 'Swagger']
+        techStack: ['NodeJS', 'JavaScript', 'Express-js', 'TypeScript', 'JOI', 'Swagger'],
+        logoBase: 'goodreqeust'
     },
     {
         name: 'Backend Express Template',
         category: 'Personal',
         link: 'https://github.com/kot-1999/BE-express',
         role: 'Backend Engineer / Architect',
-        timeSpent: 'Ongoing (initial version ~3 weeks)',
+        timeSpent: 'Ongoing',
         team: 'Solo',
         overview: `Production-ready backend template for Node.js applications. Designed as a 
             foundation for scalable REST APIs with best practices baked in: authentication,
@@ -256,31 +263,30 @@ export const projects = [
         kpi: ['Setup time', 'Code reuse', 'Maintainability'],
         metricsLinks: ['https://github.com/kot-1999/BE-express'],
         status: 'Maintained',
-        techStack: {
-            existing: [
-                'NodeJS',
-                'TypeScript',
-                'Express-js',
-                'PostgreSQL',
-                'Redis',
-                'Docker',
-                'Eslint',
-                'Winston',
-                'Prisma',
-                'JWT',
-                'Helmet',
-                'OAuth',
-                'Swagger',
-                'Sentry'
-            ]
-        }
+        techStack: [
+            'NodeJS',
+            'TypeScript',
+            'Express-js',
+            'PostgreSQL',
+            'Redis',
+            'Docker',
+            'Eslint',
+            'Winston',
+            'Prisma',
+            'JWT',
+            'Helmet',
+            'OAuth',
+            'Swagger',
+            'Sentry'
+        ],
+        logoBase: 'backend-template'
     },
     {
         name: 'Maze',
         category: 'Personal',
         link: 'https://github.com/kot-1999/BA-Maze?tab=readme-ov-file',
         role: 'Developer',
-        timeSpent: '1 week',
+        timeSpent: '6 months',
         team: 'Solo',
         overview: `Algorithm-focused project implementing maze generation and traversal logic. 
             Built to explore graph algorithms, pathfinding, and problem-solving techniques. 
@@ -302,14 +308,15 @@ export const projects = [
         kpi: ['Algorithm correctness', 'Execution speed'],
         metricsLinks: ['https://github.com/kot-1999/BA-Maze?tab=readme-ov-file'],
         status: 'Completed',
-        techStack: ['Java', 'Spring-Boot', 'HTML', 'CSS']
+        techStack: ['Java', 'Spring-Boot', 'HTML', 'CSS'],
+        logoBase: 'maze'
     },
     {
         name: 'Weather App',
         category: 'Personal',
         link: 'https://github.com/kot-1999/BA-Weather',
         role: 'Full Stack Developer',
-        timeSpent: '1 week',
+        timeSpent: '1 months',
         team: 'Solo',
         overview: `Simple weather application consuming external APIs to display real-time weather 
             data. Built to practice API integration, asynchronous programming, and frontend-backend
@@ -331,16 +338,51 @@ export const projects = [
         kpi: ['API response handling', 'UI responsiveness'],
         metricsLinks: ['https://github.com/kot-1999/BA-Weather'],
         status: 'Completed',
-        techStack: ['JavaScript', 'React-Native', 'HTML', 'CSS']
+        techStack: ['JavaScript', 'React-Native', 'HTML', 'CSS'],
+        logoBase: 'weather'
     }
 ]
 
+const pathBase = '../assets/logos/'
+const fileExtention = '.png'
+const iconExtention = '-icon'
+const smallLogoExtention = '-logo-small'
+const largeLogoExtention = '-logo-large'
+const skillPathBase = '../assets/icons/'
+
 function renderProjectDetails(project) {
-    const renderedDetails = Mustache.render(projectDetailsTemplate, project);
+    const renderedDetails = Mustache.render(projectDetailsTemplate, {
+        ...project,
+        logoLarge: pathBase + project.logoBase + largeLogoExtention + fileExtention,
+        logoSmall: pathBase + project.logoBase + smallLogoExtention + fileExtention,
+        logoAlt: project.logoBase + ' logo',
+        logoHeight: '100px',
+        techBadges: project.techStack.map((techName) => ({
+            name: techName.replaceAll('-', ' ').replaceAll('Sharp', '#'),
+            alt: techName + ' icon',
+            src: skillPathBase + techName + '-48' + fileExtention
+
+        }))
+    });
     $('#projectDetails').html(renderedDetails);
 }
 
+function projectToggleLogic() {
+    const $layout = $('.projectsLayout');
+
+    $('.projectsToggle').on('click', function () {
+        $layout.toggleClass('showProjects');
+    });
+
+    // Close sidebar when project is selected
+    $(document).on('click', '.projectItem', function () {
+        $layout.removeClass('showProjects');
+    });
+}
+
 export function loadProjectsPage() {
+    projectToggleLogic()
+
     const $list = $('#projectsList');
     const $details = $('#projectDetails');
 
@@ -352,7 +394,8 @@ export function loadProjectsPage() {
         const renderedItem = Mustache.render(projectSideItemTemplate, {
             ...project,
             active: index === 0,
-            logo: project.logo || 'assets/projects/default.png'
+            icon: pathBase + project.logoBase + iconExtention + fileExtention,
+            iconAlt: project.logoBase + ' icon'
         });
 
         $list.append(renderedItem);

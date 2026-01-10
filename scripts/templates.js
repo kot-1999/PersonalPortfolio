@@ -188,6 +188,7 @@ export const projectsPageTemplate = `
     </p>
 
     <div class="projectsLayout">
+        <button class="projectsToggle">PROJECTS</button>
         <aside class="projectsList" id="projectsList"></aside>
         <section class="projectDetails" id="projectDetails"></section>
     </div>
@@ -195,7 +196,7 @@ export const projectsPageTemplate = `
 
 export const projectSideItemTemplate = `
     <div class="projectItem {{#active}}active{{/active}}" data-project="{{name}}">
-        <img src="{{logo}}" alt="{{name}} logo" class="projectLogo">
+        <img src="{{icon}}" alt="{{iconAlt}} logo" class="projectLogo">
         <div class="projectMeta">
             <span class="projectName">{{name}}</span>
             <span class="projectCategory">{{category}}</span>
@@ -205,8 +206,21 @@ export const projectSideItemTemplate = `
 export const projectDetailsTemplate = `
     <div class='projectDetails'>
         <header class='projectHeader'>
-            <h2>{{name}}</h2>
-            <a href="{{link}}" target='_blank'>View source</a>
+            <div class="projectTitle">
+                <h2 class="fontLarge">{{name}}</h2>
+                <a class="fontSmall" href="{{link}}" target='_blank'>View source</a>
+            </div>
+            <div class="logoIcon">
+                <picture>
+                    <source
+                        srcset="{{logoLarge}}"
+                        media="(min-width: 600px)">
+                    <img
+                        alt="{{logoAlt}}"
+                        src="{{logoSmall}}"
+                        height="{{logoHeight}}">
+                </picture>
+            </div>
         </header>
     
         <div class='projectInfo'>
@@ -250,10 +264,18 @@ export const projectDetailsTemplate = `
     
         <section>
             <h3>Tech Stack</h3>
-            <div class='techBadges'>
-                {{#techStack}}
-                <span>{{.}}</span>
-                {{/techStack}}
+            <div class="techBadges">
+                {{#techBadges}}
+                <div class="techBadge">
+                    <img
+                        src="{{src}}"
+                        alt="{{alt}}"
+                        width="48"
+                        height="48"
+                    >
+                    <p class="fontSmall">{{name}}</p>
+                </div>
+                {{/techBadges}}
             </div>
         </section>
     </div>
