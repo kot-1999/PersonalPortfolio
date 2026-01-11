@@ -21,27 +21,33 @@ export const projects = [
             with inventory, shipping, and third-party payment systems. Worked closely with 
             frontend and design teams to create a robust, maintainable, and scalable architecture.`,
         responsibilities: [
-            'Designed and maintained REST APIs serving millions of users',
-            'Optimized database queries and caching strategies using Redis',
-            'Integrated third-party payment and inventory APIs',
-            'Collaborated closely with frontend, QA, and design teams',
-            'Implemented logging and error tracking with Sentry'
-        ],
-        challenges: [
-            'Handling high concurrency during flash sales',
-            'Maintaining API reliability with zero downtime deployments',
-            'Ensuring PCI-compliant secure payment processing'
+            'Design and maintained REST APIs serving millions of users',
+            'Optimize database queries and caching strategies using Redis',
+            'Collaborate closely with frontend, QA, and design teams',
+            'Implement logging and error tracking with Sentry'
         ],
         impact: [
-            'Reduced average API response times by ~30%',
-            'Maintained 99.9% uptime during peak traffic',
-            'Enabled seamless scaling to 10M+ users'
+            'Reduced code duplication by 70%, by introducing new endpoint versioning strategy',
+            'Introduced a new caching strategy which increased code maintainability with removing unnecessary complexity from endpoints',
+            'Identified and optimized 20% of the slovest SQL queries to the PSQL database',
+            'Increased integration and unit test coverage from 79% to 93%',
+            'Updated email notifications to pass 99% of spam checkers.'
         ],
-        kpi: ['API latency', 'Uptime', 'Transactions per second'],
-        metricsLinks: ['https://www.goodrequest.com/work/notino'],
         status: 'Live',
         techStack: ['NodeJS', 'TypeScript', 'RabbitMQ', 'Sentry', 'Express-js', 'PostgreSQL', 'Redis', 'Docker', 'EC2', 'RDS', 'Sequelize'],
-        logoBase: 'notino'
+        logoBase: 'notino',
+        images: [
+            {
+                full: 'notino-01.png',
+                thumb: 'notino-01.png',
+                caption: 'Notino tablet'
+            },
+            {
+                full: 'notino-02.png',
+                thumb: 'notino-02.png',
+                caption: 'Notino app'
+            }
+        ]
     },
     {
         name: 'KIA',
@@ -50,27 +56,22 @@ export const projects = [
         role: 'Backend Engineer',
         timeSpent: '4 months',
         team: 'Collaboration between Project Managers, Backend, Frontend, QA testers, and Designers',
-        overview: `Backend services for the KIA mobile application, providing real-time 
-            vehicle data, user management, and notifications. Designed APIs to support 
-            multi-country deployments and integrated with external vehicle APIs to ensure accurate 
-            and timely information. Focused on security and performance optimization.`,
+        overview: `At GoodRequest, we developed a custom feedback platform for Kia Slovakia, enabling the HR 
+            team to create, manage, and evaluate anonymous questionnaires efficiently. The system 
+            focuses on user comfort, speed, and clarity of results, reducing completion time 
+            while improving feedback quality. Built with a collaborative, cross-functional team, 
+            the platform delivers an MVP tailored to Kia’s specific needs, supporting data-driven 
+            insights for employee satisfaction and workplace improvement.`,
         responsibilities: [
             'Implemented REST APIs for vehicle and user management',
             'Optimized DB queries for large datasets',
             'Integrated caching strategies and real-time updates',
             'Collaborated with frontend and mobile developers'
         ],
-        challenges: [
-            'Integrating multiple external vehicle APIs',
-            'Securing sensitive user data',
-            'Optimizing APIs for cross-country usage'
-        ],
         impact: [
-            'Achieved sub-200ms API response times',
-            'Enabled multi-country rollout without backend issues'
+            'Secure sensitive user data',
+            'Integrating multiple external APIs'
         ],
-        kpi: ['Response time', 'Data accuracy', 'User retention'],
-        metricsLinks: ['https://www.goodrequest.com/work/kia-en'],
         status: 'Live',
         techStack: ['NodeJS', 'TypeScript', 'Express-js', 'PostgreSQL', 'Redis', 'Docker', 'Sequelize'],
         logoBase: 'kia'
@@ -82,28 +83,23 @@ export const projects = [
         role: 'Backend Engineer',
         timeSpent: '7 months',
         team: 'Collaboration between Project Managers, Backend, Frontend, QA testers, and Designers',
-        overview: `Developed the backend platform for AI-powered services, including data 
-            pipelines and agent-based models. Focused on performance, asynchronous processing, 
-            and integrating Python-based AI components with Node.js services. The project 
-            required handling large-scale data efficiently and ensuring system reliability 
-            for AI computations.`,
+        overview: `AIVODOT was developed to help investors navigate the complexity of portfolio construction. 
+            Many tools provide generic recommendations, often leading to herd behavior and 
+            suboptimal decisions. This platform delivers personalized guidance tailored to each 
+            investor’s risk profile, style, and preferences. It simplifies security selection, 
+            offers comprehensive investment insights, and includes educational resources to 
+            empower users to make informed decisions and build optimized portfolios.`,
         responsibilities: [
-            'Built scalable backend services to handle AI workflows',
-            'Integrated Python AI components with REST APIs',
-            'Managed data pipelines, storage, and queues',
-            'Optimized async task processing and logging'
-        ],
-        challenges: [
-            'Integrating AI models with REST APIs',
-            'Handling large-scale data efficiently',
-            'Maintaining low-latency responses for AI tasks'
+            'Built scalable backend services to handle API workflows',
+            'Manage data pipelines, storage, and queues',
+            'Optimized async task and data processing'
         ],
         impact: [
-            'Reduced processing latency by 25%',
-            'Enabled reliable deployment of AI services'
+            'Implemented registration flows for both administrators and users',
+            'Implemented subscription flows for three types of subscription',
+            'Implemented app’s core logic which assured correct calculation of risk, mach and other scores per user individually for over 30k of markets',
+            'Enhanced DB architecture on an early development stage to avoid performance problems in future'
         ],
-        kpi: ['Data throughput', 'Response latency', 'Model success rate'],
-        metricsLinks: ['https://www.goodrequest.com/work/aivodot'],
         status: 'Live',
         techStack: ['Stripe', 'NodeJS', 'TypeScript', 'Express-js', 'MongoDB', 'Redis', 'Docker', 'S3', 'EC2', 'CloudWatch', 'Sentry', 'Sequelize'],
         logoBase: 'aivodot'
@@ -115,24 +111,18 @@ export const projects = [
         role: 'Backend Engineer',
         timeSpent: '6 months',
         team: 'Collaboration between Project Managers, Backend, Frontend, QA testers, and Designers',
-        overview: `Developed backend APIs for fuel and logistics tracking mobile app.
-            Focused on real-time location tracking, performance optimization, and API
-            integration with GPS and mapping services. Ensured high availability and
-            low-latency updates for mobile clients.`,
+        overview: `The Benzinol mobile application was created to modernize and streamline the loyalty 
+            program experience. It enables users to easily create or manage loyalty cards, 
+            collect reward points, and access detailed information such as user profiles, transaction 
+            history, and available rewards. Built with a strong emphasis on performance and usability, 
+            the app supports both iOS and Android platforms.`,
         responsibilities: [
-            'Implemented backend services for mobile tracking',
-            'Optimized database queries for real-time performance',
-            'Integrated mapping and GPS APIs',
-            'Ensured high uptime and scalability'
-        ],
-        challenges: [
-            'Real-time location tracking',
-            'Mobile network variability',
-            'Data consistency across multiple devices'
+            'Optimize database queries for real-time performance',
+            'Ensure high uptime and scalability'
         ],
         impact: [
             'Maintained 99.9% uptime',
-            'Real-time tracking for hundreds of vehicles'
+            'Data consistency across multiple devices'
         ],
         kpi: ['API latency', 'Uptime', 'Location update frequency'],
         metricsLinks: ['https://www.goodrequest.com/blog/grpartners-benzinol-apps'],
@@ -151,83 +141,84 @@ export const projects = [
         role: 'Full Stack Developer',
         timeSpent: '48 hours',
         team: '4 people',
-        overview: `Collaborative city management dashboard built in 48 hours.
+        overview: `Application for notification of failures or breakdowns in the city built in 48 hours.
             Real-time visualization of city data and task tracking for urban planning.
             Focused on rapid prototyping and cross-team collaboration.`,
         responsibilities: [
-            'Developed backend APIs',
-            'Created dashboard frontend with live updates',
-            'Designed database schema and data models'
-        ],
-        challenges: [
-            'Building functional prototype in limited time',
-            'Real-time collaboration and data syncing'
+            'Create dashboard frontend with live updates',
+            'Implement real time issues update on map'
         ],
         impact: [
-            'Demo-ready dashboard recognized among top 10 hackathon projects'
+            'Demo-ready dashboard recognized among top hackathon projects',
+            'Real-time collaboration and data syncing',
+            'Building functional prototype in limited time'
         ],
-        kpi: ['Realtime update frequency', 'Functional prototypes completed'],
-        metricsLinks: ['https://github.com/Dmytro27Ind/city-desk?tab=readme-ov-file'],
         status: 'Prototype',
         techStack: ['NodeJS', 'React-Native', 'JavaScript', 'HTML', 'CSS', 'Leaflet', 'Bootstrap'],
-        logoBase: 'city-desk'
+        logoBase: 'city-desk',
+        images: [
+            {
+                full: 'city-desk-1.jpg',
+                thumb: 'city-desk-1.jpg',
+                caption: 'Login screen'
+            },
+            {
+                full: 'city-desk-4.jpg',
+                thumb: 'city-desk-4.jpg',
+                caption: 'Breakdowns on map'
+            },
+            {
+                full: 'city-desk-2.jpg',
+                thumb: 'city-desk-2.jpg',
+                caption: 'New post for a breakdown'
+            },
+            {
+                full: 'city-desk-3.jpg',
+                thumb: 'city-desk-3.jpg',
+                caption: 'Profile info'
+            }
+        ]
     },
     {
         name: 'Way of Memories',
         category: 'Hackathon',
         link: 'https://devpost.com/software/way-of-memories',
-        role: 'Full Stack Developer',
+        role: 'Game Developer',
         timeSpent: '72 hours',
         team: '4 people',
-        overview: `AR-based multiplayer memory puzzle game developed in 3 days. 
-            Focused on game logic, real-time multiplayer support, and augmented reality features.`,
+        overview: `AR-based 2D single payer game developed in 3 days. 
+            Focused on game logic and augmented reality features.`,
         responsibilities: [
-            'Backend API for multiplayer sessions',
             'AR feature integration',
             'Frontend game UI development'
         ],
-        challenges: [
-            'Integrating AR with multiplayer logic',
-            'Rapid prototype development under time pressure'
-        ],
         impact: [
             'Playable AR game demo completed',
-            'Hackathon recognition for innovative gameplay'
+            'Hackathon recognition'
         ],
-        kpi: ['Gameplay stability', 'AR feature integration', 'Player engagement'],
-        metricsLinks: ['https://devpost.com/software/way-of-memories'],
         status: 'Prototype',
         techStack: ['CSharp-Language', 'Unity'],
-        logoBase: 'way-of-memmories'
+        logoBase: 'way-of-memmories',
+        videoUrl: 'https://www.youtube.com/embed/VV7NYGk6_Gc'
     },
-
-    // -------------------
-    // Personal Projects
-    // -------------------
     {
         name: 'express-joi-to-swagger',
         category: 'Personal',
         link: 'https://github.com/kot-1999/express-joi-to-swagger',
-        role: 'Solo Developer',
+        role: 'Software Developer',
         timeSpent: '3 months',
-        team: 'Solo',
+        team: 'Part of a multi-contributor development effort',
         overview: `Open-source library converting Joi validation schemas into Swagger/OpenAPI documentation for Express 
             applications. Simplifies API documentation for Node.js developers.`,
         responsibilities: [
-            'Designed library API and usage patterns',
-            'Implemented schema conversion logic',
-            'Wrote documentation and tests'
-        ],
-        challenges: [
-            'Handling all Joi validation edge cases',
-            'Generating accurate OpenAPI output'
+            'Implement new swagger versioning',
+            'Update schema conversion logic and documentation',
+            'Update documentation and tests'
         ],
         impact: [
             'Widely used in personal and community projects',
             'Open-source contributions and forks'
         ],
-        kpi: ['GitHub stars', 'Downloads', 'Pull requests'],
-        metricsLinks: ['https://github.com/kot-1999/express-joi-to-swagger'],
         status: 'Maintained',
         techStack: ['NodeJS', 'JavaScript', 'Express-js', 'TypeScript', 'JOI', 'Swagger'],
         logoBase: 'goodreqeust'
@@ -239,29 +230,20 @@ export const projects = [
         role: 'Backend Engineer / Architect',
         timeSpent: 'Ongoing',
         team: 'Solo',
-        overview: `Production-ready backend template for Node.js applications. Designed as a 
-            foundation for scalable REST APIs with best practices baked in: authentication,
-            authorization, logging, error handling, validation, and observability. 
-            Used as a starting point for multiple real projects.`,
+        overview: `BE-express is a project designed to demonstrate a robust backend application using 
+            modern technologies and best practices. The project is built with Express.js and TypeScript,
+            providing a solid foundation for scalable and maintainable server-side applications.`,
         responsibilities: [
-            'Designed modular backend architecture',
-            'Implemented authentication and session handling',
-            'Integrated Redis for caching and rate limiting',
-            'Configured logging, monitoring, and error tracking',
+            'Design modular backend architecture',
+            'Implement authentication and session handling',
+            'Integrate Redis and PostgreSQL for storage purposes',
+            'Configure logging, monitoring, and error tracking',
             'Set up ESLint, testing, and environment configs'
         ],
-        challenges: [
-            'Balancing flexibility with opinionated defaults',
-            'Designing extensible middleware and module structure',
-            'Ensuring production readiness out of the box'
-        ],
         impact: [
-            'Reduced backend bootstrap time by ~70%',
-            'Used as a base for multiple side and production projects',
+            'Used as a base for multiple side projects',
             'Improved code consistency and maintainability'
         ],
-        kpi: ['Setup time', 'Code reuse', 'Maintainability'],
-        metricsLinks: ['https://github.com/kot-1999/BE-express'],
         status: 'Maintained',
         techStack: [
             'NodeJS',
@@ -288,28 +270,44 @@ export const projects = [
         role: 'Developer',
         timeSpent: '6 months',
         team: 'Solo',
-        overview: `Algorithm-focused project implementing maze generation and traversal logic. 
-            Built to explore graph algorithms, pathfinding, and problem-solving techniques. 
-            Emphasized clean logic, performance, and correctness.`,
+        overview: `BA-Maze is a project designed to generate and solve mazes using various algorithms. It provides 
+            a graphical user interface (GUI) to visualize the maze generation and solving processes, making 
+            it an excellent educational tool for understanding these algorithms.`,
         responsibilities: [
-            'Implemented maze generation algorithms',
-            'Developed pathfinding logic',
-            'Structured code for clarity and extensibility'
-        ],
-        challenges: [
-            'Ensuring correctness of traversal algorithms',
-            'Balancing randomness with solvability',
+            'Implement maze generation algorithms',
+            'Ensure correctness of algorithms ',
+            'Structure code for clarity and extensibility',
             'Keeping implementation readable and testable'
         ],
         impact: [
-            'Strengthened understanding of graph algorithms',
-            'Reusable logic for future algorithmic problems'
+            'Strengthened understanding of algorithms',
+            'Implementing a reusable logic for future algorithmic problems'
         ],
-        kpi: ['Algorithm correctness', 'Execution speed'],
-        metricsLinks: ['https://github.com/kot-1999/BA-Maze?tab=readme-ov-file'],
         status: 'Completed',
         techStack: ['Java', 'Spring-Boot', 'HTML', 'CSS'],
-        logoBase: 'maze'
+        logoBase: 'maze',
+        images: [
+            {
+                full: 'maze-01.png',
+                thumb: 'maze-01.png',
+                caption: 'Game'
+            },
+            {
+                full: 'maze-04.png',
+                thumb: 'maze-04.png',
+                caption: 'Ranking'
+            },
+            {
+                full: 'maze-02.png',
+                thumb: 'maze-02.png',
+                caption: 'Authorization'
+            },
+            {
+                full: 'maze-03.png',
+                thumb: 'maze-03.png',
+                caption: 'Comments'
+            }
+        ]
     },
     {
         name: 'Weather App',
@@ -318,25 +316,21 @@ export const projects = [
         role: 'Full Stack Developer',
         timeSpent: '1 months',
         team: 'Solo',
-        overview: `Simple weather application consuming external APIs to display real-time weather 
-            data. Built to practice API integration, asynchronous programming, and frontend-backend
-            interaction.`,
+        overview: `Weather is a hybrid BE/FE application designed to provide weather-related data and services. 
+            This project leverages external APIs to gather real-time weather information and offers endpoints
+            for clients to access various weather metrics. The system is built with a focus on scalability 
+            and reliability, ensuring efficient handling of API requests.`,
         responsibilities: [
-            'Integrated third-party weather APIs',
-            'Handled async data fetching and error states',
-            'Built clean and user-friendly UI'
-        ],
-        challenges: [
-            'Handling API failures gracefully',
-            'Managing async data flow',
-            'Keeping UI responsive and clear'
+            'Design and build clean and user-friendly UI',
+            'Integrate third-party weather APIs',
+            'Handle async data fetching and error states'
         ],
         impact: [
-            'Solidified understanding of API-driven applications',
-            'Reusable patterns for async frontend apps'
+            'Fetches real-time weather data using third-party APIs',
+            'Provided detailed weather metrics such as temperature, humidity, and wind speed',
+            'Allowed users to tailor requests to specific data needs (e.g., current weather, forecasts)',
+            'Built with a robust backend architecture to handle concurrent requests efficiently'
         ],
-        kpi: ['API response handling', 'UI responsiveness'],
-        metricsLinks: ['https://github.com/kot-1999/BA-Weather'],
         status: 'Completed',
         techStack: ['JavaScript', 'React-Native', 'HTML', 'CSS'],
         logoBase: 'weather',
@@ -344,22 +338,22 @@ export const projects = [
             {
                 full: 'weather-01.jpg',
                 thumb: 'weather-01.jpg',
-                caption: 'Homepage'
-            },
-            {
-                full: 'weather-02.jpg',
-                thumb: 'weather-02.jpg',
-                caption: 'Homepage'
-            },
-            {
-                full: 'weather-03.jpg',
-                thumb: 'weather-03.jpg',
-                caption: 'Homepage'
+                caption: 'Daily weather forecast'
             },
             {
                 full: 'weather-04.jpg',
                 thumb: 'weather-04.jpg',
-                caption: 'Homepage'
+                caption: 'Clouds Map'
+            },
+            {
+                full: 'weather-02.jpg',
+                thumb: 'weather-02.jpg',
+                caption: 'Air pollution info'
+            },
+            {
+                full: 'weather-03.jpg',
+                thumb: 'weather-03.jpg',
+                caption: 'Application settings'
             }
         ]
     }

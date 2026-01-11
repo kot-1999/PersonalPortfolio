@@ -230,6 +230,21 @@ export const projectDetailsTemplate = `
             <p><strong>Status:</strong> {{status}}</p>
         </div>
         
+        <section class="projectVideo">
+            {{#videoUrl}}
+            <h3>Project Video</h3>
+            <div class="videoWrapper">
+                <iframe 
+                    src="{{videoUrl}}" 
+                    title="Project Video" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            {{/videoUrl}}
+        </section>
+        
         {{#images.length}}
         <section class='slideshow' data-project="{{name}}">
             <div class='slideshowContainer'>
@@ -244,8 +259,8 @@ export const projectDetailsTemplate = `
                 <button class='next'>❯</button>
                 
                 <div class='captionRow'>
-                    <span class="slideIndex"></span>
-                    <span class='caption'>{{images.0.caption}}</span>
+                    <div class='caption'>{{images.0.caption}}</div>
+                    <div class="slideIndex"></div>
                 </div>
                 
                 <div class='thumbnails'>
@@ -274,15 +289,6 @@ export const projectDetailsTemplate = `
                 {{#responsibilities}}
                 <li>{{.}}</li>
                 {{/responsibilities}}
-            </ul>
-        </section>
-    
-        <section>
-            <h3>Challenges</h3>
-            <ul>
-                {{#challenges}}
-                <li>{{.}}</li>
-                {{/challenges}}
             </ul>
         </section>
     
