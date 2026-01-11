@@ -894,9 +894,13 @@ h3 {
 }
 
 .slide img {
+    max-width: 100%;
     max-height: 700px;
+    width: auto;
+    height: auto;
     display: block;
     margin: 0 auto;
+    object-fit: contain;
 }
 
 .prev, .next {
@@ -940,4 +944,10 @@ h3 {
 
 .caption {
     margin-left: 20px;
+}
+@media (max-width: 600px) {
+    .thumb {
+        width: 60px;
+
+    }
 }
