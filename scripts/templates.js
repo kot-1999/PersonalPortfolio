@@ -222,13 +222,46 @@ export const projectDetailsTemplate = `
                 </picture>
             </div>
         </header>
-    
+        
         <div class='projectInfo'>
             <p><strong>Role:</strong> {{role}}</p>
             <p><strong>Time spent:</strong> {{timeSpent}}</p>
             <p><strong>Team:</strong> {{team}}</p>
             <p><strong>Status:</strong> {{status}}</p>
         </div>
+        
+        {{#images.length}}
+        <section class='slideshow' data-project="{{name}}">
+            <div class='slideshowContainer'>
+        
+                {{#images}}
+                <div class='slide'>
+                    <img alt="{{caption}}" src="{{full}}">
+                </div>
+                {{/images}}
+        
+                <button class='prev'>❮</button>
+                <button class='next'>❯</button>
+                
+                <div class='captionRow'>
+                    <span class="slideIndex"></span>
+                    <span class='caption'>{{images.0.caption}}</span>
+                </div>
+                
+                <div class='thumbnails'>
+                    {{#images}}
+                    <img
+                        class='thumb'
+                        alt="{{caption}}"
+                        data-index="{{index}}"
+                        src="{{thumb}}"
+                    >
+                    {{/images}}
+                </div>
+        
+            </div>
+        </section>
+        {{/images.length}}
     
         <section>
             <h3>Overview</h3>

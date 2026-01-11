@@ -876,3 +876,68 @@ h3 {
     object-fit: contain;
     margin-bottom: 6px;
 }
+
+/* SLIDESHOW */
+
+.slideshow {
+    margin-top: 32px;
+}
+
+.slideshowContainer {
+    position: relative;
+    background: #504e4e;
+    padding: 10px 0px;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    max-height: 700px;
+    display: block;
+    margin: 0 auto;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #00000099;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.next { right: 0; }
+
+.thumbnails {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    justify-content: center;
+}
+
+.thumb {
+    width: 80px;
+    opacity: .6;
+    cursor: pointer;
+}
+
+.thumb.active,
+.thumb:hover {
+    opacity: 1;
+}
+
+.captionRow {
+    text-align: center;
+    padding: 20px 0px;
+    background: #302f2f;
+    color: #fff;
+
+}
+
+.caption {
+    margin-left: 20px;
+}

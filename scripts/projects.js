@@ -339,9 +339,73 @@ export const projects = [
         metricsLinks: ['https://github.com/kot-1999/BA-Weather'],
         status: 'Completed',
         techStack: ['JavaScript', 'React-Native', 'HTML', 'CSS'],
-        logoBase: 'weather'
+        logoBase: 'weather',
+        images: [
+            {
+                full: 'weather-01.jpg',
+                thumb: 'weather-01.jpg',
+                caption: 'Homepage'
+            },
+            {
+                full: 'weather-02.jpg',
+                thumb: 'weather-02.jpg',
+                caption: 'Homepage'
+            },
+            {
+                full: 'weather-03.jpg',
+                thumb: 'weather-03.jpg',
+                caption: 'Homepage'
+            },
+            {
+                full: 'weather-04.jpg',
+                thumb: 'weather-04.jpg',
+                caption: 'Homepage'
+            }
+        ]
     }
 ]
+
+function initSlideshows() {
+    document.querySelectorAll('.slideshow').forEach((slideshow) => {
+        let index = 1;
+        const slides = slideshow.querySelectorAll('.slide');
+        const thumbs = slideshow.querySelectorAll('.thumb');
+        const caption = slideshow.querySelector('.caption');
+
+        function show(n) {
+            if (n > slides.length) {
+                index = 1
+            }
+            if (n < 1) {
+                index = slides.length
+            }
+
+            slides.forEach((s) => s.style.display = 'none');
+            thumbs.forEach((t) => t.classList.remove('active'));
+
+            slides[index - 1].style.display = 'block';
+            thumbs[index - 1].classList.add('active');
+            caption.textContent = thumbs[index - 1].alt;
+
+            const indexEl = slideshow.querySelector('.slideIndex');
+
+            indexEl.textContent = `${index} / ${slides.length}`;
+            caption.textContent = thumbs[index - 1].alt;
+        }
+
+        show(index);
+
+        slideshow.querySelector('.prev').onclick = () => show(--index);
+        slideshow.querySelector('.next').onclick = () => show(++index);
+
+        thumbs.forEach((thumb) => {
+            thumb.onclick = () => {
+                index = Number(thumb.dataset.index);
+                show(index);
+            };
+        });
+    });
+}
 
 const pathBase = '../assets/logos/'
 const fileExtention = '.png'
@@ -349,6 +413,7 @@ const iconExtention = '-icon'
 const smallLogoExtention = '-logo-small'
 const largeLogoExtention = '-logo-large'
 const skillPathBase = '../assets/icons/'
+const projectImagesPathBase = '../assets/projectImages/'
 
 function renderProjectDetails(project) {
     const renderedDetails = Mustache.render(projectDetailsTemplate, {
@@ -362,9 +427,19 @@ function renderProjectDetails(project) {
             alt: techName + ' icon',
             src: skillPathBase + techName + '-48' + fileExtention
 
-        }))
+        })),
+        images: project.images
+            ? project.images.map((image, index, arr) => ({
+                full: projectImagesPathBase + image.full,
+                thumb: projectImagesPathBase + image.thumb,
+                caption: image.caption,
+                index: index + 1,
+                total: arr.length
+            }))
+            : null
     });
-    $('#projectDetails').html(renderedDetails);
+    $('#projectDetails').html(renderedDetails)
+    initSlideshows();
 }
 
 function projectToggleLogic() {
