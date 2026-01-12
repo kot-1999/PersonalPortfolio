@@ -5,6 +5,9 @@ export const iconExtension = '-icon'
 export const smallLogoExtension = '-logo-small'
 export const largeLogoExtension = '-logo-large'
 export const projectImagesPathBase = '../assets/projectImages/'
+export const thumbnailExtension = '-thumbnail'
+export const largeImageExtension = '-large'
+export const smallImageExtension = '-small'
 
 export const BOOK_CATEGORY = {
     ALL: 'All',

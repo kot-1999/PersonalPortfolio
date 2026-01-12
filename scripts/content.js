@@ -29,15 +29,14 @@ export const projects = [
         status: 'Live',
         techStack: ['NodeJS', 'TypeScript', 'RabbitMQ', 'Sentry', 'Express-js', 'PostgreSQL', 'Redis', 'Docker', 'EC2', 'RDS', 'Sequelize'],
         logoBase: 'notino',
+        imageExtension: '.png',
         images: [
             {
-                full: 'notino-01.png',
-                thumb: 'notino-01.png',
+                name: 'notino-01',
                 caption: 'Notino tablet'
             },
             {
-                full: 'notino-02.png',
-                thumb: 'notino-02.png',
+                name: 'notino-02',
                 caption: 'Notino app'
             }
         ]
@@ -145,25 +144,22 @@ export const projects = [
         status: 'Prototype',
         techStack: ['NodeJS', 'React-Native', 'JavaScript', 'HTML', 'CSS', 'Leaflet', 'Bootstrap'],
         logoBase: 'city-desk',
+        imageExtension: '.jpg',
         images: [
             {
-                full: 'city-desk-1.jpg',
-                thumb: 'city-desk-1.jpg',
+                name: 'city-desk-1',
                 caption: 'Login screen'
             },
             {
-                full: 'city-desk-4.jpg',
-                thumb: 'city-desk-4.jpg',
+                name: 'city-desk-4',
                 caption: 'Breakdowns on map'
             },
             {
-                full: 'city-desk-2.jpg',
-                thumb: 'city-desk-2.jpg',
+                name: 'city-desk-2',
                 caption: 'New post for a breakdown'
             },
             {
-                full: 'city-desk-3.jpg',
-                thumb: 'city-desk-3.jpg',
+                name: 'city-desk-3',
                 caption: 'Profile info'
             }
         ]
@@ -275,25 +271,22 @@ export const projects = [
         status: 'Completed',
         techStack: ['Java', 'Spring-Boot', 'HTML', 'CSS'],
         logoBase: 'maze',
+        imageExtension: '.png',
         images: [
             {
-                full: 'maze-01.png',
-                thumb: 'maze-01.png',
+                name: 'maze-01',
                 caption: 'Game'
             },
             {
-                full: 'maze-04.png',
-                thumb: 'maze-04.png',
+                name: 'maze-04',
                 caption: 'Ranking'
             },
             {
-                full: 'maze-02.png',
-                thumb: 'maze-02.png',
+                name: 'maze-02',
                 caption: 'Authorization'
             },
             {
-                full: 'maze-03.png',
-                thumb: 'maze-03.png',
+                name: 'maze-03',
                 caption: 'Comments'
             }
         ]
@@ -323,25 +316,22 @@ export const projects = [
         status: 'Completed',
         techStack: ['JavaScript', 'React-Native', 'HTML', 'CSS'],
         logoBase: 'weather',
+        imageExtension: '.jpg',
         images: [
             {
-                full: 'weather-01.jpg',
-                thumb: 'weather-01.jpg',
+                name: 'weather-01',
                 caption: 'Daily weather forecast'
             },
             {
-                full: 'weather-04.jpg',
-                thumb: 'weather-04.jpg',
+                name: 'weather-04',
                 caption: 'Clouds Map'
             },
             {
-                full: 'weather-02.jpg',
-                thumb: 'weather-02.jpg',
+                name: 'weather-02',
                 caption: 'Air pollution info'
             },
             {
-                full: 'weather-03.jpg',
-                thumb: 'weather-03.jpg',
+                name: 'weather-03',
                 caption: 'Application settings'
             }
         ]

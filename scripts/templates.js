@@ -251,7 +251,16 @@ export const projectDetailsTemplate = `
         
                 {{#images}}
                 <div class='slide'>
-                    <img alt="{{caption}}" src="{{full}}">
+                    <picture>
+                        <source
+                            srcset="{{imagelarge}}"
+                            media="(min-width: 600px)">
+                        <img
+                            class="techIcon"
+                            alt="{{caption}}"
+                            src="{{imageSmall}}"
+                            >
+                    </picture>
                 </div>
                 {{/images}}
         

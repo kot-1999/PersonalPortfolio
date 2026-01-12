@@ -1,11 +1,11 @@
 import {
     iconExtension,
-    iconsPathBase,
+    iconsPathBase, largeImageExtension,
     largeLogoExtension,
     logosPathBase,
     pngFileExtension,
-    projectImagesPathBase,
-    smallLogoExtension
+    projectImagesPathBase, smallImageExtension,
+    smallLogoExtension, thumbnailExtension
 } from './constants.js';
 import { projects } from './content.js'
 import Mustache from './mustache.js'
@@ -69,10 +69,11 @@ function renderProjectDetails(project) {
             src: iconsPathBase + techName + '-48' + pngFileExtension
 
         })),
-        images: project.images
+        images: project.images && project.imageExtension
             ? project.images.map((image, index, arr) => ({
-                full: projectImagesPathBase + image.full,
-                thumb: projectImagesPathBase + image.thumb,
+                imageLarge: projectImagesPathBase + image.name + largeImageExtension + project.imageExtension,
+                imageSmall: projectImagesPathBase + image.name + smallImageExtension + project.imageExtension,
+                thumb: projectImagesPathBase + image.name + thumbnailExtension + project.imageExtension,
                 caption: image.caption,
                 index: index + 1,
                 total: arr.length
