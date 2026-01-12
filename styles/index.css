@@ -154,6 +154,7 @@ html {
 
 #navLogo {
     text-decoration: none;
+    margin: 50px;
 }
 
 .navBar {
@@ -213,7 +214,7 @@ html {
     cursor: pointer;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 840px) {
     .navToggle {
         display: block;
     }
