@@ -1,4 +1,10 @@
-import { iconExtension, iconsPathBase, libraryPathBase, logosPathBase, pngFileExtension } from './constants.js'
+import {
+    iconsPathBase,
+    largeLogoExtension,
+    libraryPathBase,
+    logosPathBase,
+    pngFileExtension
+} from './constants.js'
 import { personalLibrary, projects, skills } from './content.js'
 import Mustache from './mustache.js'
 import { carouselItemTemplate } from './templates.js'
@@ -16,9 +22,9 @@ function initCarousels() {
         // Mouse wheel → horizontal scroll
         carousel.addEventListener(
             'wheel',
-            (e) => {
-                e.preventDefault()
-                carousel.scrollLeft += e.deltaY * 3
+            (event) => {
+                event.preventDefault()
+                carousel.scrollLeft += event.deltaY * 2
             },
             { passive: false }
         )
@@ -57,7 +63,7 @@ export function loadMain() {
 
     projects.forEach((project) => {
         const renderedItem = Mustache.render(carouselItemTemplate, {
-            imageSrc: logosPathBase + project.logoBase + iconExtension + pngFileExtension,
+            imageSrc: logosPathBase + project.logoBase + largeLogoExtension + pngFileExtension,
             title: project.name
         })
         projectCarousel.append(renderedItem)
