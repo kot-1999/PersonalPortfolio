@@ -1,7 +1,7 @@
-import { loadBooks } from './library.js';
-import { loadMain } from './main.js';
-import { loadProjectsPage } from './projects.js';
-import { loadSkills } from './skills.js';
+import { loadBooks } from './library.js'
+import { loadMain } from './main.js'
+import { loadProjectsPage } from './projects.js'
+import { loadSkills } from './skills.js'
 import {
     emailMeTemplate,
     libraryPageTemplate,
@@ -9,14 +9,14 @@ import {
     navTemplate,
     projectsPageTemplate,
     techStackPageTemplate
-} from './templates.js';
+} from './templates.js'
 
 async function renderNavigation() {
-    $('#body').prepend(navTemplate);
+    $('#body').prepend(navTemplate)
 }
 
 function showContent() {
-    $('#content').css('visibility', 'visible');
+    $('#content').css('visibility', 'visible')
 }
 
 renderNavigation()
@@ -24,79 +24,82 @@ renderNavigation()
 $(document).ready ( function () {
     $(document).on ('click', '#navProjects', async function () {
         $('#content').empty()
-        $('#content').append(projectsPageTemplate);
+        $('#content').append(projectsPageTemplate)
         loadProjectsPage()
-    });
+    })
 
     $(document).on ('click', '#navTechStack', async function () {
         $('#content').empty()
-        $('#content').append(techStackPageTemplate);
+        $('#content').append(techStackPageTemplate)
         loadSkills()
-    });
+    })
 
     $(document).on ('click', '#navLibrary', function () {
         $('#content').empty()
         $('#content').append(libraryPageTemplate)
         loadBooks()
-    });
+    })
 
     $(document).on('click', '#navEmailMe', function () {
         const overlay = $(`
         <div id="emailOverlay">
             ${emailMeTemplate}
         </div>
-    `);
+    `)
 
-        $('body').append(overlay);
-    });
+        $('body').append(overlay)
+    })
 
     $(document).on ('click', '#nawMain', async function () {
         $('#content').empty()
-        $('#content').append(mainPage);
+        $('#content').append(mainPage)
         loadMain()
-    });
-});
+    })
+})
 
 function renderFromHash() {
-    const hash = window.location.hash;
+    const hash = window.location.hash
 
-    $('#content').empty();
+    $('#content').empty()
 
     switch (hash) {
     case '#projects':
-        $('#content').append(projectsPageTemplate);
+        $('#content').append(projectsPageTemplate)
         loadProjectsPage()
-        break;
+        break
 
     case '#techStack':
-        $('#content').append(techStackPageTemplate);
-        loadSkills();
-        break;
+        $('#content').append(techStackPageTemplate)
+        loadSkills()
+        break
 
     case '#library':
-        $('#content').append(libraryPageTemplate);
-        loadBooks();
-        break;
+        $('#content').append(libraryPageTemplate)
+        loadBooks()
+        break
 
     default:
-        $('#content').append(mainPage);
+        $('#content').append(mainPage)
         loadMain()
-        break;
+        break
     }
 }
 
 $(document).ready(function () {
-    renderFromHash();
+    renderFromHash()
     showContent()
-});
+})
 
 $('#navToggle').on('click', function () {
-    $('#navMenu').toggleClass('open');
-});
+    $('#navMenu').toggleClass('open')
+})
 
 // Close EmailME when clicking outside form
 $(document).on('click', '#emailOverlay', function (e) {
     if (!$(e.target).closest('#emailMeForm').length) {
-        $(this).remove();
+        $(this).remove()
     }
-});
+})
+
+window.addEventListener('popstate', renderFromHash)
+window.addEventListener('hashchange', renderFromHash)

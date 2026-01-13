@@ -6,7 +6,7 @@ import {
     pngFileExtension,
     projectImagesPathBase, smallImageExtension,
     smallLogoExtension, thumbnailExtension
-} from './constants.js';
+} from './constants.js'
 import { projects } from './content.js'
 import Mustache from './mustache.js'
 import {
@@ -16,10 +16,10 @@ import {
 
 function initSlideshows() {
     document.querySelectorAll('.slideshow').forEach((slideshow) => {
-        let index = 1;
-        const slides = slideshow.querySelectorAll('.slide');
-        const thumbs = slideshow.querySelectorAll('.thumb');
-        const caption = slideshow.querySelector('.caption');
+        let index = 1
+        const slides = slideshow.querySelectorAll('.slide')
+        const thumbs = slideshow.querySelectorAll('.thumb')
+        const caption = slideshow.querySelector('.caption')
 
         function show(n) {
             if (n > slides.length) {
@@ -29,31 +29,31 @@ function initSlideshows() {
                 index = slides.length
             }
 
-            slides.forEach((s) => s.style.display = 'none');
-            thumbs.forEach((t) => t.classList.remove('active'));
+            slides.forEach((s) => s.style.display = 'none')
+            thumbs.forEach((t) => t.classList.remove('active'))
 
-            slides[index - 1].style.display = 'block';
-            thumbs[index - 1].classList.add('active');
-            caption.textContent = thumbs[index - 1].alt;
+            slides[index - 1].style.display = 'block'
+            thumbs[index - 1].classList.add('active')
+            caption.textContent = thumbs[index - 1].alt
 
-            const indexEl = slideshow.querySelector('.slideIndex');
+            const indexEl = slideshow.querySelector('.slideIndex')
 
-            indexEl.textContent = `${index} / ${slides.length}`;
-            caption.textContent = thumbs[index - 1].alt;
+            indexEl.textContent = `${index} / ${slides.length}`
+            caption.textContent = thumbs[index - 1].alt
         }
 
-        show(index);
+        show(index)
 
-        slideshow.querySelector('.prev').onclick = () => show(--index);
-        slideshow.querySelector('.next').onclick = () => show(++index);
+        slideshow.querySelector('.prev').onclick = () => show(--index)
+        slideshow.querySelector('.next').onclick = () => show(++index)
 
         thumbs.forEach((thumb) => {
             thumb.onclick = () => {
-                index = Number(thumb.dataset.index);
-                show(index);
-            };
-        });
-    });
+                index = Number(thumb.dataset.index)
+                show(index)
+            }
+        })
+    })
 }
 
 function renderProjectDetails(project) {
@@ -79,32 +79,32 @@ function renderProjectDetails(project) {
                 total: arr.length
             }))
             : null
-    });
+    })
     $('#projectDetails').html(renderedDetails)
-    initSlideshows();
+    initSlideshows()
 }
 
 function projectToggleLogic() {
-    const $layout = $('.projectsLayout');
+    const $layout = $('.projectsLayout')
 
     $('.projectsToggle').on('click', function () {
-        $layout.toggleClass('showProjects');
-    });
+        $layout.toggleClass('showProjects')
+    })
 
     // Close sidebar when project is selected
     $(document).on('click', '.projectItem', function () {
-        $layout.removeClass('showProjects');
-    });
+        $layout.removeClass('showProjects')
+    })
 }
 
 export function loadProjectsPage() {
     projectToggleLogic()
 
-    const $list = $('#projectsList');
-    const $details = $('#projectDetails');
+    const $list = $('#projectsList')
+    const $details = $('#projectDetails')
 
-    $list.empty();
-    $details.empty();
+    $list.empty()
+    $details.empty()
 
     // Render sidebar
     projects.forEach((project, index) => {
@@ -113,22 +113,22 @@ export function loadProjectsPage() {
             active: index === 0,
             icon: logosPathBase + project.logoBase + iconExtension + pngFileExtension,
             iconAlt: project.logoBase + ' icon'
-        });
+        })
 
-        $list.append(renderedItem);
-    });
+        $list.append(renderedItem)
+    })
 
     // Render first project by default
-    renderProjectDetails(projects[0]);
+    renderProjectDetails(projects[0])
 
     // Click handling
     $list.on('click', '.projectItem', function () {
-        const projectName = $(this).data('project');
+        const projectName = $(this).data('project')
 
-        $('.projectItem').removeClass('active');
-        $(this).addClass('active');
+        $('.projectItem').removeClass('active')
+        $(this).addClass('active')
 
-        const project = projects.find((p) => p.name === projectName);
-        renderProjectDetails(project);
-    });
+        const project = projects.find((p) => p.name === projectName)
+        renderProjectDetails(project)
+    })
 }

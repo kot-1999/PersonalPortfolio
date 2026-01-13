@@ -135,6 +135,7 @@ export default defineConfig([
             }],
             'object-curly-spacing': ['error', 'always'],
             'no-extra-semi': 'error',
+            'semi': ['error', 'never'],
             'comma-dangle': ['error', 'never'],
             'prefer-const': 'error',
             'brace-style': ['error', '1tbs', { 'allowSingleLine': true }],
@@ -160,4 +161,4 @@ export default defineConfig([
         }
     }
 
-]);
+])

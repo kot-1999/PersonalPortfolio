@@ -2,7 +2,7 @@
  * mustache.js - Logic-less {{mustache}} templates with JavaScript
  * http://github.com/janl/mustache.js
  */
-
+/* eslint-disable */
 const objectToString = Object.prototype.toString;
 const isArray = Array.isArray || function isArrayPolyfill (object) {
     return objectToString.call(object) === '[object Array]';

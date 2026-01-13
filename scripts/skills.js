@@ -1,11 +1,11 @@
-import { iconsPathBase, pngFileExtension, SKILL_CATEGORY } from './constants.js';
-import { skills } from './content.js';
-import Mustache from './mustache.js';
-import { skillCardTemplate } from './templates.js';
+import { iconsPathBase, pngFileExtension, SKILL_CATEGORY } from './constants.js'
+import { skills } from './content.js'
+import Mustache from './mustache.js'
+import { skillCardTemplate } from './templates.js'
 
 export function loadSkills(selectedCategory = SKILL_CATEGORY.ALL) {
-    const $container = $('#techCategories');
-    $container.empty();
+    const $container = $('#techCategories')
+    $container.empty()
 
     Object.values(SKILL_CATEGORY).forEach((category) => {
         const button = `
@@ -15,11 +15,11 @@ export function loadSkills(selectedCategory = SKILL_CATEGORY.ALL) {
             >
                 ${category}
             </button>
-        `;
-        $container.append(button);
-    });
+        `
+        $container.append(button)
+    })
 
-    $('#techIcons').empty();
+    $('#techIcons').empty()
 
     for (
         const skill 
@@ -48,6 +48,6 @@ export function loadSkills(selectedCategory = SKILL_CATEGORY.ALL) {
 
 // Handles category clicks
 $(document).on('click', '.techCategoryButton', function () {
-    const category = $(this).data('category');
-    loadSkills(category);
-});
+    const category = $(this).data('category')
+    loadSkills(category)
+})

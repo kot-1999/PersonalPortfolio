@@ -1,4 +1,4 @@
-import { BOOK_CATEGORY, SKILL_CATEGORY, SKILL_PROFICIENCY } from './constants.js';
+import { BOOK_CATEGORY, SKILL_CATEGORY, SKILL_PROFICIENCY } from './constants.js'
 
 export const projects = [
     {
@@ -666,7 +666,7 @@ export const skills = [
         proficiency: SKILL_PROFICIENCY.BASIC,
         context: 'Game engine used for experimenting with interactive applications and learning real-time 2D/3D development concepts.'
     }
-];
+]
 
 export const personalLibrary = [
     // Programming Languages
@@ -830,4 +830,4 @@ export const personalLibrary = [
         summary: 'Comprehensive guide to operating system design, covering processes, memory, scheduling, and file systems.',
         takeaways: 'Learned process management, CPU scheduling, memory handling, file systems, and OS architecture concepts.'
     }
-];
+]
