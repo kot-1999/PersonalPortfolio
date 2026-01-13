@@ -160,8 +160,44 @@ export const mainPage = `
                 </p>
             </div> 
         </section>
+        
+        <div class="carousel-wrapper">
+            <button class="carousel-prev">‹</button>
+            <div class="carousel techCarousel">
+
+                <!-- more slides -->
+            </div>
+            <button class="carousel-next">›</button>
+        </div>
+        
+        <div class="carousel-wrapper">
+            <button class="carousel-prev">‹</button>
+            <div class="carousel projectCarousel">
+
+                <!-- more slides -->
+            </div>
+            <button class="carousel-next">›</button>
+        </div>
+        
+        <div class="carousel-wrapper">
+            <button class="carousel-prev">‹</button>
+            <div class="carousel libraryCarousel">
+
+                <!-- more slides -->
+            </div>
+            <button class="carousel-next">›</button>
+        </div>
     </div>
 `
+
+export const carouselItemTemplate = `
+    <div class="carousel-item">
+        <div class="carousel-content">
+            <img src="{{imageSrc}}" alt="{{title}}">
+            <p>{{title}}</p>
+        </div>
+    </div>
+`;
 
 export const emailMeTemplate = `
     <form id="emailMeForm">

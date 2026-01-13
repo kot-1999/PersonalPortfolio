@@ -1,4 +1,5 @@
 import { loadBooks } from './library.js';
+import { loadMain } from './main.js';
 import { loadProjectsPage } from './projects.js';
 import { loadSkills } from './skills.js';
 import {
@@ -52,6 +53,7 @@ $(document).ready ( function () {
     $(document).on ('click', '#nawMain', async function () {
         $('#content').empty()
         $('#content').append(mainPage);
+        loadMain()
     });
 });
 
@@ -78,6 +80,7 @@ function renderFromHash() {
 
     default:
         $('#content').append(mainPage);
+        loadMain()
         break;
     }
 }

@@ -8,7 +8,7 @@ export const projectImagesPathBase = '../assets/projectImages/'
 export const thumbnailExtension = '-thumbnail'
 export const largeImageExtension = '-large'
 export const smallImageExtension = '-small'
-
+export const libraryPathBase = '../assets/bookCovers/'
 export const BOOK_CATEGORY = {
     ALL: 'All',
     AI: 'AI',

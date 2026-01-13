@@ -1,4 +1,4 @@
-import { BOOK_CATEGORY } from './constants.js';
+import {BOOK_CATEGORY, libraryPathBase, pngFileExtension} from './constants.js';
 import { personalLibrary } from './content.js';
 import Mustache from './mustache.js';
 import { bookTemplate } from './templates.js';
@@ -29,7 +29,7 @@ export function loadBooks(selectedCategory = BOOK_CATEGORY.ALL) {
     for (const book of books) {
         const renderedTemplate = Mustache.render(bookTemplate, {
             img: {
-                source: `../assets/bookCovers/${book.key}.png`,
+                source: libraryPathBase + book.key + pngFileExtension,
                 alt: book.name
             },
             book
