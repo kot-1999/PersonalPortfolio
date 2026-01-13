@@ -162,30 +162,30 @@ export const mainPage = `
         </section>
         
         <div class="carousel-wrapper">
-            <button class="carousel-prev">‹</button>
+            <button class="carousel-prev prev">‹</button>
             <div class="carousel techCarousel">
 
                 <!-- more slides -->
             </div>
-            <button class="carousel-next">›</button>
+            <button class="carousel-next next">›</button>
         </div>
         
         <div class="carousel-wrapper">
-            <button class="carousel-prev">‹</button>
+            <button class="carousel-prev prev">‹</button>
             <div class="carousel projectCarousel">
 
                 <!-- more slides -->
             </div>
-            <button class="carousel-next">›</button>
+            <button class="carousel-next next">›</button>
         </div>
         
         <div class="carousel-wrapper">
-            <button class="carousel-prev">‹</button>
+            <button class="carousel-prev prev">‹</button>
             <div class="carousel libraryCarousel">
 
                 <!-- more slides -->
             </div>
-            <button class="carousel-next">›</button>
+            <button class="carousel-next next">›</button>
         </div>
     </div>
 `

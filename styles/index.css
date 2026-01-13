@@ -988,15 +988,18 @@ h3 {
     overflow-y: hidden;
 
     /* Hide scrollbar – Firefox */
+    /* eslint-disable-next-line */
     scrollbar-width: none;
 
     /* Hide scrollbar – IE / Edge */
     -ms-overflow-style: none;
+
+    padding: 20px 0px;
 }
 
 .carousel-item {
-    flex: 0 0 200px;
-    height: 320px;
+    flex: 0 0 130px;
+    height: 200px;
 
     display: flex;
     flex-direction: column;
@@ -1004,21 +1007,37 @@ h3 {
     justify-content: center;
 
     scroll-snap-align: start;
+
+    background: #F0F0F099;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px #00000026;
 }
 
 .carousel-item img {
-    width: 100%;
-    max-height: 400px;
-
+    width: 100px;
     object-fit: contain;
     object-position: center;
 
-    image-rendering: auto;
-    -webkit-font-smoothing: antialiased;
 }
 
 .carousel-content {
-    margin: 12px 0px;
-    padding-bottom: 15px;
     text-align: center;
+}
+
+.libraryCarousel .carousel-item {
+    flex: 0 0 280px;
+    height: 430px;
+}
+
+.libraryCarousel .carousel-item img {
+    max-height: 350px;
+    width: 280px;
+    overflow: visible;
 }
