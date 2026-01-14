@@ -4,7 +4,7 @@
         <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
         <link
             type='text/css'
-            href='../styles/index.css'
+            href='styles/index.css'
             rel='stylesheet'
         >
         <link href='https://fonts.googleapis.com' rel='preconnect'>
@@ -14,17 +14,30 @@
             rel='preconnect'
         >
         <link href='https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap' rel='stylesheet'>
+        <link
+            type='image/png'
+            href='assets/favicon.png'
+            rel='icon'
+        >
         <meta
             charset='UTF-8'
             content='width=device-width, initial-scale=1'
             name='viewport'
         >
-        <title>Title</title>
+        <title>Alex K. Portfolio</title>
     </head>
     <body id='body' class='spaceZero'>
-        <div id='content'>
+        <video
+            class='bgVideo'
+            autoplay
+            loop
+            muted
+        >
+            <source type='video/mp4' src='assets/videos/background.mp4'>
+        </video>
+        <div class='bgOverlay'></div>
 
-        </div>
+        <div id='content'></div>
 
         <footer class='footer'>
             <div class='footer-links'>
@@ -36,13 +49,13 @@
                     <picture>
                         <source
                             media='(min-width: 600px)'
-                            srcset='../assets/socialMedia/GitHub-96.png'
+                            srcset='assets/socialMedia/GitHub-96.png'
                         >
                         <img
                             class='techIcon spaceZero'
                             alt='github icon'
                             height='40rem'
-                            src='../assets/socialMedia/GitHub-48.png'
+                            src='assets/socialMedia/GitHub-48.png'
                         >
                     </picture>
                     <span>GitHub</span>
@@ -56,13 +69,13 @@
                     <picture>
                         <source
                             media='(min-width: 600px)'
-                            srcset='../assets/socialMedia/LinkedIn-96.png'
+                            srcset='assets/socialMedia/LinkedIn-96.png'
                         >
                         <img
                             class='techIcon spaceZero'
                             alt='LinkedIn Icon'
                             height='40rem'
-                            src='../assets/socialMedia/LinkedIn-48.png'
+                            src='assets/socialMedia/LinkedIn-48.png'
                         >
                     </picture>
                     <span>LinkedIn</span>
@@ -76,13 +89,13 @@
                     <picture>
                         <source
                             media='(min-width: 600px)'
-                            srcset='../assets/socialMedia/Dev-Community-96.png'
+                            srcset='assets/socialMedia/Dev-Community-96.png'
                         >
                         <img
                             class='techIcon spaceZero'
                             alt='Dev.to Icon'
                             height='40rem'
-                            src='../assets/socialMedia/Dev-Community-48.png'
+                            src='assets/socialMedia/Dev-Community-48.png'
                         >
                     </picture>
                     <span>Dev.to</span>
@@ -91,9 +104,12 @@
             <p>© <span id='currentYear'></span> Oleksandr Kashytskyi</p>
         </footer>
 
-        <script type='module' src='../scripts/nav.js'></script>
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script type='module' src='scripts/nav.js'></script>
         <script>
             document.getElementById('currentYear').textContent = new Date().getFullYear();
         </script>
     </body>
 </html>
+
+

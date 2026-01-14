@@ -1,59 +1,85 @@
 export const bookTemplate =  `
     <div class='libraryItem'>
-        <div class="bookImageBlock">
+        <div class='bookImageBlock'>
             <img
                 class='bookImg'
                 alt='{{img.alt}}'
                 src='{{img.source}}'
             >
         </div>
-        <div class="bookInfo">
+        <div class='bookInfo'>
             <h3>{{book.name}}</h3>
-            <p class="author fontSmall"><strong>{{book.author}}</strong></p>
-        
-            <div class="bookExtra">
+            <p class='author fontSmall'><strong>{{book.author}}</strong></p>
+    
+            <div class='bookExtra'>
                 <p><strong>Category:</strong> {{book.category}}</p>
-                <p class="summary"><strong>Summary:</strong> {{book.summary}}</p>
-                <p class="takeaways"><strong>Takeaways:</strong> {{book.takeaways}}</p>
+                <p class='summary'><strong>Summary:</strong> {{book.summary}}</p>
+                <p class='takeaways'><strong>Takeaways:</strong> {{book.takeaways}}</p>
             </div>
-        
-            <div class="bookToggle">▼</div>
+    
+            <div class='bookToggle'>Details</div>
         </div>
-    </div>`
+    </div>
+`
 
 export const navTemplate =  `
-    <nav class="navBar">
-        <a id="navLogo" class="navLeft" href="index.html">/:AlexK</a>
-        
-        <button class="navToggle" id="navToggle">≡</button>
+    <nav class='navBar'>
+        <a
+            id='navLogo'
+            class='navLeft'
+            href='index.html'
+        >/:AlexK</a>
     
-        <ul class="navRight" id="navMenu">
-            <li><a id="navMain" href="index.html">Main</a></li>
-            <li><a id="navProjects" href="#projects">Projects</a></li>
-            <li><a id="navTechStack" href="#techStack">Tech Stack</a></li>
-            <li><a id="navLibrary" href="#library">Library</a></li>
-            <li><a id="navEmailMe" href="#emailMe">Email Me</a></li>
+        <button id='navToggle' class='navToggle'>≡</button>
+    
+        <ul id='navMenu' class='navRight'>
+            <li><a
+                    id='navMain'
+                    class='navItem'
+                    href='index.html'
+                >Main</a></li>
+            <li><a
+                    id='navProjects'
+                    class='navItem'
+                    href='#projects'
+                >Projects</a></li>
+            <li><a
+                    id='navTechStack'
+                    class='navItem'
+                    href='#techStack'
+                >Tech Stack</a></li>
+            <li><a
+                    id='navLibrary'
+                    class='navItem'
+                    href='#library'
+                >Library</a></li>
+            <li><a
+                    id='navEmailMe'
+                    class='navItem'
+                    href='#emailMe'
+                >Email Me</a></li>
         </ul>
     </nav>
 `
 
 export const skillCardTemplate = `
     <div class="skillCard {{skill.borderColor}}">
-        <div class="skillIcon">
+        <div class='skillIcon'>
             <picture>
                 <source
-                    srcset="{{img.srcLarge}}"
-                    media="(min-width: 600px)">
+                    media='(min-width: 600px)'
+                    srcset="{{img.srcLarge}}">
                 <img
-                    class="techIcon"
+                    class='techIcon'
                     alt="{{img.alt}}"
+                    height="{{img.height}}"
                     src="{{img.srcSmall}}"
-                    height="{{img.height}}">
+                >
             </picture>
         </div>
-
-        <p class="skillName fontBig">{{skill.name}}</p>
-        <p class="skillContext">{{skill.context}}</p>
+    
+        <p class='skillName fontBig'>{{skill.name}}</p>
+        <p class='skillContext'>{{skill.context}}</p>
     </div>
 `
 
@@ -65,7 +91,7 @@ export const libraryPageTemplate = `
         I hope you find some inspiration here!
     </p>
     
-    <div id="libraryCategories"></div>
+    <div id='libraryCategories'></div>
     <div id='bookIcons'></div>
 `
 
@@ -78,35 +104,53 @@ export const techStackPageTemplate = `
         I rely on daily to build scalable backend systems, maintain
         databases, and ensure observability and reliability.
     </p>
-    <div id="techCategories"></div>
+    <div id='techCategories'></div>
     <div id='technologyProficiency'>
-        <p class="technologyProficiencyText borderBasic">Basic</p>
-        <p class="technologyProficiencyText borderAdvanced">Advacned</p>
-        <p class="technologyProficiencyText borderExpert">Expert</p>
+        <p class='technologyProficiencyText borderBasic'>Basic</p>
+        <p class='technologyProficiencyText borderAdvanced'>Advacned</p>
+        <p class='technologyProficiencyText borderExpert'>Expert</p>
     </div>
     <div id='techIcons' class='width80 blockCenter'></div>
 `
 
 export const mainPage = `
-    <div id="main">
-        <section class='hero'>
+    <div id='main'>
+        <div class='hero'>
             <h1 class='name fontExtraLarge'>Oleksandr (Alex) Kashytskyi</h1>
-            <h2 class='role fontLarge'>Backend Developer / Database Architect</h2>
-            <p class='location fontSmall'>London, UK</p>
-        </section>
+            <h2 class='role fontLarge'><i>Backend Developer / Database Architect</i></h2>
+            <p class='location'>London, UK</p>
+        </div>
+    
+        <h3 class='fontLarge welcome'>Hello and Welcome</h3>
     
         <section class='about'>
             <p>
-                Backend Engineer with 3+ years of production experience building scalable
+                I am a Backend Developer with 3+ years of production experience building scalable
                 backend systems for B2B, B2C, and fintech products. I’ve worked on
-                applications serving <strong>10M+ users</strong>, focusing on performance,
-                clean architecture, and long-term maintainability.
+                applications serving hundreds of thousands of clients. and millions of requests per hour. I focus on
+                code quality and performance, clean architecture, and long-term maintainability.
             </p>
         </section>
     
-        <section class='sectionContent'>
-            <h3>Domains</h3>
-            <p>B2B · B2C · Fintech · E-commerce · Enterprise Systems</p>
+        <div class='sideBySide'>
+            <h3 class='fontLarge'>Projects</h3>
+            <a class='footerLink' href='#projects'>Explore Projects</a>
+        </div>
+    
+        <div class='carousel-wrapper'>
+            <button class='carousel-prev prev'>‹</button>
+            <div class='carousel projectCarousel'></div>
+            <button class='carousel-next next'>›</button>
+        </div>
+    
+        <section class='domains'>
+            <h3>My Domains:</h3>
+            <span>B2B</span>
+            <span>B2C</span>
+            <span>Fintech</span>
+            <span class='noWrap'> E-commerce</span>
+            <span class='noWrap'>Enterprise Systems</span>
+    
         </section>
     
         <div class='sideBySide'>
@@ -114,24 +158,11 @@ export const mainPage = `
                 <div class='sectionContent'>
                     <h3>What I Do</h3>
                     <ul>
-                        <li>Design and maintain scalable REST APIs</li>
-                        <li>Build and evolve Node.js backend systems</li>
+                        <li><strong>Design</strong> and maintain scalable <strong>REST APIs</strong></li>
+                        <li><strong>Build</strong> and evolve Node.js <strong>backend systems</strong></li>
                         <li>Optimise databases and data-heavy workflows</li>
-                        <li>Refactor legacy systems safely in production</li>
-                        <li>Collaborate in cross-functional Agile teams</li>
-                    </ul>
-                </div>
-            </section>
-    
-            <section>
-                <div class='sectionContent'>
-                    <h3>Impact</h3>
-                    <ul>
-                        <li>Systems handling millions of requests daily</li>
-                        <li>Reduced backend code duplication by <strong>70%</strong></li>
-                        <li>Improved slow SQL queries by <strong>~20%</strong></li>
-                        <li>Increased test coverage from <strong>79% → 93%</strong></li>
-                        <li>Maintained <strong>99.9% uptime</strong></li>
+                        <li><strong>Refactor legacy</strong> systems safely in production</li>
+                        <li>Collaborate in cross-functional <strong>Agile teams</strong></li>
                     </ul>
                 </div>
             </section>
@@ -139,188 +170,222 @@ export const mainPage = `
             <section>
                 <div class='sectionContent'>
                     <h3>Education</h3>
-                    <div class='educationItem'>
-                        <p>MSc Web Development 2025 – Present</p>
-                        <p>University of Roehampton, London</p>
+                    <ul class='educationItem'>
+                        <li><strong>MSc Web Development</strong> 2025 – Present</li>
+                        <li class='noListStyle'>University of Roehampton, London</li>
+                        <li><strong>BSc Computer Science</strong> 2019 – 2022</li>
+                        <li class='noListStyle'>Technical University of Košice</li>
+                        <li class='noListStyle'>Thesis:
+                            <a href='https://www.youtube.com/watch?v=DrO_A16kGj8' target='_blank'>
+                                Implementation of OpenAI environment
+                            </a>
+                        </li>
+                    </ul>
     
-                        <p>BSc Computer Science 2019 – 2022</p>
-                        <p>Technical University of Košice</p>
-                        <p>Thesis: Implementation of OpenAI environment</p>
-                    </div>
                 </div>
-            </section>
-    
-            <section>
-                <div class='sectionContent'>
-                    <h3>Experience Summary</h3>
-                    <p>
-                        Backend Engineer with commercial experience delivering and maintaining
-                        production systems for large-scale e-commerce, fintech, and enterprise
-                        applications. Worked on high-traffic products used by millions of users
-                        across Europe in cross-functional Agile teams.
-                    </p>
-                </div> 
             </section>
         </div>
-
-            <div>
-                <h3 class="fontLarge">Tech Stack</h3>
-            </div>
-            <div class="carousel-wrapper">
-                <button class="carousel-prev prev">‹</button>
-                <div class="carousel techCarousel">
     
-                    <!-- more slides -->
-                </div>
-                <button class="carousel-next next">›</button>
-            </div>
-            
-            
-            <div>
-                <h3 class="fontLarge">Projects</h3>
-            </div>
+        <div class='sideBySide'>
+            <h3 class='fontLarge'>Tech Stack</h3>
+            <a class='footerLink' href='#techStack'>Explore Tech Stack</a>
+        </div>
+        <div class='carousel-wrapper'>
+            <button class='carousel-prev prev'>‹</button>
+            <div class='carousel techCarousel'></div>
+            <button class='carousel-next next'>›</button>
+        </div>
     
-            <div class="carousel-wrapper">
-                <button class="carousel-prev prev">‹</button>
-                <div class="carousel projectCarousel">
+        <div class='sideBySide'>
+            <h3 class='fontLarge'>Experience Summary</h3>
+            <a class='footerLink navEmailMe' href='#emailMe'>Get in Touch</a>
+        </div>
+        <section>
+            <div class='sectionContent'>
+                <p class='textIdent'>
+                    I’m passionate about building scalable,
+                    high-performance applications. Working at GoodReqeust ltd I’ve delivered robust solutions for
+                    companies like Notino,
+                    KIA, and Aivodot, designing REST APIs, optimizing databases, implementing caching strategies,
+                    and integrating complex workflows. I work across the full backend stack, from Node.js, TypeScript,
+                    and Express.js to PostgreSQL, Redis, Docker, and AWS, ensuring clean, maintainable, and
+                    well-tested code that powers real-world systems serving thousands of users.
+                </p>
+                <p class='textIdent'>
     
-                    <!-- more slides -->
-                </div>
-                <button class="carousel-next next">›</button>
+                    Beyond professional projects, I develop personal and open-source applications
+                    that showcase my ability to tackle complex logic, build functional prototypes,
+                    and experiment with emerging technologies like AR and real-time data processing.
+                    With a solid foundation in algorithms, design patterns, and software architecture,
+                    I create solutions that are not only reliable and efficient but also user-focused and scalable.
+                </p>
             </div>
-            <div>
-                <h3 class="fontLarge">Personal Library</h3>
-            </div>
-            <div class="carousel-wrapper">
-                <button class="carousel-prev prev">‹</button>
-                <div class="carousel libraryCarousel">
+        </section>
     
-                    <!-- more slides -->
-                </div>
-                <button class="carousel-next next">›</button>
-            </div>
-            
+    
+        <div class='sideBySide'>
+            <h3 class='fontLarge'>Personal Library</h3>
+            <a class='footerLink' href='#library'>Explore Library</a>
+        </div>
+        <div class='carousel-wrapper'>
+            <button class='carousel-prev prev'>‹</button>
+            <div class='carousel libraryCarousel'></div>
+            <button class='carousel-next next'>›</button>
+        </div>
     </div>
 `
 
 export const carouselItemTemplate = `
-    <div class="carousel-item">
-        <div class="carousel-content">
-            <img src="{{imageSrc}}" alt="{{title}}">
+    <div class='carousel-item'>
+        <div class='carousel-content'>
+            <img alt="{{title}}" src="{{imageSrc}}">
             <p>{{title}}</p>
         </div>
     </div>
 `
 
-export const emailMeTemplate = `
-    <form id="emailMeForm">
-        <h2>Contact Me</h2>
-
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit">Send</button>
-    </form>
+export function emailMeTemplate(formspreeAction) {
+    return `
+        <form
+            id='emailMeForm'
+            action='${formspreeAction}'
+        >
+            <h2>Contact Me</h2>
+        
+            <label for='email'>Email:</label>
+            <input
+                id='email'
+                type='email'
+                name='email'
+                required
+            >
+        
+            <input
+                type='hidden'
+                name='_subject'
+                value='New message from my website'
+            >
+        
+            <label for='message'>Message:</label>
+            <textarea
+                id='message'
+                name='message'
+                required
+                rows='5'
+            ></textarea>
+        
+            <button type='submit'>Send</button>
+        </form>
 `
+}
 
 export const projectsPageTemplate = `
     <h2>Projects</h2>
     <p>
-        Projects that reflect my growth as a software engineer — from production 
+        Projects that reflect my growth as a software engineer — from production
         systems used by millions to experimental ideas built for learning and exploration.
     </p>
-
-    <div class="projectsLayout">
-        <button class="projectsToggle">PROJECTS</button>
-        <aside class="projectsList" id="projectsList"></aside>
-        <section class="projectDetails" id="projectDetails"></section>
+    
+    <div class='projectsLayout'>
+        <button class='projectsToggle'>PROJECTS</button>
+        <aside id='projectsList' class='projectsList'></aside>
+        <section id='projectDetails' class='projectDetails'></section>
     </div>
 `
 
 export const projectSideItemTemplate = `
     <div class="projectItem {{#active}}active{{/active}}" data-project="{{name}}">
-        <img src="{{icon}}" alt="{{iconAlt}} logo" class="projectLogo">
-        <div class="projectMeta">
-            <span class="projectName">{{name}}</span>
-            <span class="projectCategory fontSmall">{{category}}</span>
+        <img
+            class='projectLogo'
+            alt="{{iconAlt}} logo"
+            src="{{icon}}"
+        >
+        <div class='projectMeta'>
+            <span class='projectName'>{{name}}</span>
+            <span class='projectCategory fontSmall'>{{category}}</span>
         </div>
     </div>
 `
 export const projectDetailsTemplate = `
     <div class='projectDetails'>
         <header class='projectHeader'>
-            <div class="projectTitle">
-                <h2 class="fontLarge">{{name}}</h2>
-                <a class="fontSmall" href="{{link}}" target='_blank'>View source</a>
+            <div class='projectTitle'>
+                <h2 class='fontLarge'>{{name}}</h2>
+                <a
+                    class='fontSmall'
+                    href="{{link}}"
+                    target='_blank'
+                >View source</a>
             </div>
-            <div class="logoIcon">
+            <div class='logoIcon'>
                 <picture>
                     <source
-                        srcset="{{logoLarge}}"
-                        media="(min-width: 600px)">
+                        media='(min-width: 600px)'
+                        srcset="{{logoLarge}}">
                     <img
                         alt="{{logoAlt}}"
+                        height="{{logoHeight}}"
                         src="{{logoSmall}}"
-                        height="{{logoHeight}}">
+                    >
                 </picture>
             </div>
         </header>
-        
+    
         <div class='projectInfo'>
             <p><strong>Role:</strong> {{role}}</p>
             <p><strong>Time spent:</strong> {{timeSpent}}</p>
             <p><strong>Team:</strong> {{team}}</p>
             <p><strong>Status:</strong> {{status}}</p>
         </div>
-        
-        <section class="projectVideo">
+    
+        <section class='projectVideo'>
             {{#videoUrl}}
             <h3>Project Video</h3>
-            <div class="videoWrapper">
-                <iframe 
-                    src="{{videoUrl}}" 
-                    title="Project Video" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
+            <div class='videoWrapper'>
+                <iframe
+                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                    allowfullscreen
+                    frameborder='0'
+                    src="{{videoUrl}}"
+                    title='Project Video'
+                >
                 </iframe>
             </div>
             {{/videoUrl}}
         </section>
-        
+    
+        <section>
+            <h3>Overview</h3>
+            <p>{{overview}}</p>
+        </section>
+    
         {{#images.length}}
         <section class='slideshow' data-project="{{name}}">
             <div class='slideshowContainer'>
-        
+    
                 {{#images}}
                 <div class='slide'>
                     <picture>
                         <source
-                            srcset="{{imagelarge}}"
-                            media="(min-width: 600px)">
+                            media='(min-width: 600px)'
+                            srcset="{{imagelarge}}">
                         <img
-                            class="techIcon"
+                            class='techIcon'
                             alt="{{caption}}"
                             src="{{imageSmall}}"
-                            >
+                        >
                     </picture>
                 </div>
                 {{/images}}
-        
+    
                 <button class='prev'>❮</button>
                 <button class='next'>❯</button>
-                
+    
                 <div class='captionRow'>
                     <div class='caption'>{{images.0.caption}}</div>
-                    <div class="slideIndex"></div>
+                    <div class='slideIndex'></div>
                 </div>
-                
+    
                 <div class='thumbnails'>
                     {{#images}}
                     <img
@@ -331,15 +396,10 @@ export const projectDetailsTemplate = `
                     >
                     {{/images}}
                 </div>
-        
+    
             </div>
         </section>
         {{/images.length}}
-    
-        <section>
-            <h3>Overview</h3>
-            <p>{{overview}}</p>
-        </section>
     
         <section>
             <h3>Responsibilities</h3>
@@ -361,19 +421,20 @@ export const projectDetailsTemplate = `
     
         <section>
             <h3>Tech Stack</h3>
-            <div class="techBadges">
+            <div class='techBadges'>
                 {{#techBadges}}
-                <div class="techBadge">
+                <div class='techBadge'>
                     <img
-                        src="{{src}}"
                         alt="{{alt}}"
-                        width="48"
-                        height="48"
+                        height='48'
+                        src="{{src}}"
+                        width='48'
                     >
-                    <p class="fontSmall">{{name}}</p>
+                    <p class='fontSmall'>{{name}}</p>
                 </div>
                 {{/techBadges}}
             </div>
         </section>
     </div>
+
 `
