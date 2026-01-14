@@ -1,5 +1,5 @@
 import { iconsPathBase, pngFileExtension, SKILL_CATEGORY } from './constants.js'
-import { skills } from './content.js'
+import { skillsContent } from './content.js'
 import Mustache from './mustache.js'
 import { skillCardTemplate } from './templates.js'
 
@@ -24,8 +24,8 @@ export function loadSkills(selectedCategory = SKILL_CATEGORY.ALL) {
     for (
         const skill 
         of selectedCategory === SKILL_CATEGORY.ALL
-            ? skills 
-            : skills.filter((skill) => skill.categories.includes(selectedCategory))
+            ? skillsContent
+            : skillsContent.filter((skill) => skill.categories.includes(selectedCategory))
     ) {
         const renderedTemplate = Mustache.render(skillCardTemplate, {
             img: {

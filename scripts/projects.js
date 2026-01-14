@@ -7,7 +7,7 @@ import {
     projectImagesPathBase, smallImageExtension,
     smallLogoExtension, thumbnailExtension
 } from './constants.js'
-import { projects } from './content.js'
+import { projectsContent } from './content.js'
 import Mustache from './mustache.js'
 import {
     projectSideItemTemplate,
@@ -21,11 +21,11 @@ function initSlideshows() {
         const thumbs = slideshow.querySelectorAll('.thumb')
         const caption = slideshow.querySelector('.caption')
 
-        function show(n) {
-            if (n > slides.length) {
+        function show(newIndex) {
+            if (newIndex > slides.length) {
                 index = 1
             }
-            if (n < 1) {
+            if (newIndex < 1) {
                 index = slides.length
             }
 
@@ -84,30 +84,17 @@ function renderProjectDetails(project) {
     initSlideshows()
 }
 
-function projectToggleLogic() {
-    const $layout = $('.projectsLayout')
-
-    $('.projectsToggle').on('click', function () {
-        $layout.toggleClass('showProjects')
-    })
-
-    // Close sidebar when project is selected
-    $(document).on('click', '.projectItem', function () {
-        $layout.removeClass('showProjects')
-    })
-}
-
 export function loadProjectsPage() {
-    projectToggleLogic()
 
-    const $list = $('#projectsList')
-    const $details = $('#projectDetails')
+    const projectsList = $('#projectsList')
+    const projectDetails = $('#projectDetails')
+    const projectLayout = $('.projectsLayout')
 
-    $list.empty()
-    $details.empty()
+    projectsList.empty()
+    projectDetails.empty()
 
     // Render sidebar
-    projects.forEach((project, index) => {
+    projectsContent.forEach((project, index) => {
         const renderedItem = Mustache.render(projectSideItemTemplate, {
             ...project,
             active: index === 0,
@@ -115,20 +102,30 @@ export function loadProjectsPage() {
             iconAlt: project.logoBase + ' icon'
         })
 
-        $list.append(renderedItem)
+        projectsList.append(renderedItem)
     })
 
     // Render first project by default
-    renderProjectDetails(projects[0])
+    renderProjectDetails(projectsContent[0])
 
     // Click handling
-    $list.on('click', '.projectItem', function () {
+    projectsList.on('click', '.projectItem', function () {
         const projectName = $(this).data('project')
 
         $('.projectItem').removeClass('active')
         $(this).addClass('active')
 
-        const project = projects.find((p) => p.name === projectName)
+        const project = projectsContent.find((p) => p.name === projectName)
         renderProjectDetails(project)
+    })
+
+    // Open sidebar
+    $('.projectsToggle').on('click', function () {
+        projectLayout.toggleClass('showProjects')
+    })
+
+    // Close sidebar when project is selected
+    $(document).on('click', '.projectItem', function () {
+        projectLayout.removeClass('showProjects')
     })
 }

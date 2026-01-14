@@ -5,7 +5,7 @@ import {
     logosPathBase,
     pngFileExtension
 } from './constants.js'
-import { personalLibrary, projects, skills } from './content.js'
+import { personalLibraryContent, projectsContent, skillsContent } from './content.js'
 import Mustache from './mustache.js'
 import { carouselItemTemplate } from './templates.js'
 
@@ -15,12 +15,8 @@ function initCarousels() {
         const prev = wrapper.querySelector('.carousel-prev')
         const next = wrapper.querySelector('.carousel-next')
 
-        if (!carousel) {
-            return
-        }
-
-        // Mouse wheel → horizontal scroll
-        carousel.addEventListener(
+        // Handle horizontal scroll
+        carousel?.addEventListener(
             'wheel',
             (event) => {
                 event.preventDefault()
@@ -29,7 +25,7 @@ function initCarousels() {
             { passive: false }
         )
 
-        // Buttons
+        // Button scroll
         prev?.addEventListener('click', () => {
             carousel.scrollBy({
                 left: -300,
@@ -48,12 +44,12 @@ function initCarousels() {
 
 export function loadMain() {
 
-    // Render carousel items
+    // Render all items for each carousel
     const techCarousel = $('.techCarousel')
     const projectCarousel = $('.projectCarousel')
     const libraryCarousel = $('.libraryCarousel')
 
-    skills.forEach((skill) => {
+    skillsContent.forEach((skill) => {
         const renderedItem = Mustache.render(carouselItemTemplate, {
             imageSrc: `${iconsPathBase}${skill.key}-96${pngFileExtension}`,
             title: skill.key.replaceAll('-', ' ').replaceAll('Sharp', '#')
@@ -61,7 +57,7 @@ export function loadMain() {
         techCarousel.append(renderedItem)
     })
 
-    projects.forEach((project) => {
+    projectsContent.forEach((project) => {
         const renderedItem = Mustache.render(carouselItemTemplate, {
             imageSrc: logosPathBase + project.logoBase + largeLogoExtension + pngFileExtension,
             title: project.name
@@ -69,7 +65,7 @@ export function loadMain() {
         projectCarousel.append(renderedItem)
     })
 
-    personalLibrary.forEach((book) => {
+    personalLibraryContent.forEach((book) => {
         const renderedItem = Mustache.render(carouselItemTemplate, {
             imageSrc: libraryPathBase + book.key + pngFileExtension,
             title: book.name

@@ -1,6 +1,6 @@
 import { BOOK_CATEGORY, SKILL_CATEGORY, SKILL_PROFICIENCY } from './constants.js'
 
-export const projects = [
+export const projectsContent = [
     {
         name: 'Notino',
         category: 'GoodRequest',
@@ -27,7 +27,8 @@ export const projects = [
             'Updated email notifications to pass 99% of spam checkers.'
         ],
         status: 'Live',
-        techStack: ['NodeJS', 'TypeScript', 'RabbitMQ', 'Sentry', 'Express-js', 'PostgreSQL', 'Redis', 'Docker', 'EC2', 'RDS', 'Sequelize'],
+        techStack: ['NodeJS', 'TypeScript', 'RabbitMQ', 'Sentry', 'Express-js',
+            'PostgreSQL', 'Redis', 'Docker', 'EC2', 'RDS', 'Sequelize', 'Swagger', 'JOI', 'SES'],
         logoBase: 'notino',
         imageExtension: '.png',
         images: [
@@ -65,7 +66,7 @@ export const projects = [
             'Integrating multiple external APIs'
         ],
         status: 'Live',
-        techStack: ['NodeJS', 'TypeScript', 'Express-js', 'PostgreSQL', 'Redis', 'Docker', 'Sequelize'],
+        techStack: ['NodeJS', 'TypeScript', 'Express-js', 'PostgreSQL', 'Redis', 'Docker', 'Swagger', 'Sequelize'],
         logoBase: 'kia'
     },
     {
@@ -93,7 +94,7 @@ export const projects = [
             'Enhanced DB architecture on an early development stage to avoid performance problems in future'
         ],
         status: 'Live',
-        techStack: ['Stripe', 'NodeJS', 'TypeScript', 'Express-js', 'MongoDB', 'Redis', 'Docker', 'S3', 'EC2', 'CloudWatch', 'Sentry', 'Sequelize'],
+        techStack: ['Stripe', 'NodeJS', 'TypeScript', 'Express-js', 'MongoDB', 'Redis', 'Docker', 'S3', 'EC2', 'CloudWatch', 'Swagger', 'Sentry', 'Sequelize', 'JOI', 'JWT'],
         logoBase: 'aivodot'
     },
     {
@@ -119,7 +120,7 @@ export const projects = [
         kpi: ['API latency', 'Uptime', 'Location update frequency'],
         metricsLinks: ['https://www.goodrequest.com/blog/grpartners-benzinol-apps'],
         status: 'Live',
-        techStack: ['NodeJS', 'TypeScript', 'Express-js', 'PostgreSQL', 'Redis', 'Docker'],
+        techStack: ['NodeJS', 'TypeScript', 'Express-js', 'PostgreSQL', 'Redis', 'Docker', 'Swagger', 'JOI', 'JWT'],
         logoBase: 'benzinol'
     },
     {
@@ -244,7 +245,8 @@ export const projects = [
             'Helmet',
             'OAuth',
             'Swagger',
-            'Sentry'
+            'Sentry',
+            'Google-Cloud-Console'
         ],
         logoBase: 'backend-template'
     },
@@ -317,6 +319,7 @@ export const projects = [
         techStack: ['JavaScript', 'React-Native', 'HTML', 'CSS'],
         logoBase: 'weather',
         imageExtension: '.jpg',
+        videoUrl: 'https://www.youtube.com/embed/ZaQ60oc3CUQ',
         images: [
             {
                 name: 'weather-01',
@@ -338,7 +341,7 @@ export const projects = [
     }
 ]
 
-export const skills = [
+export const skillsContent = [
     // Languages & Backend
     {
         key: 'NodeJS',
@@ -425,6 +428,18 @@ export const skills = [
         categories: [SKILL_CATEGORY.BACKEND],
         proficiency: SKILL_PROFICIENCY.EXPERT,
         context: 'ORM providing model-based access to SQL databases.'
+    },
+    {
+        key: 'React-Native',
+        categories: [SKILL_CATEGORY.FRONTEND],
+        proficiency: SKILL_PROFICIENCY.ADVANCED,
+        context: 'Framework for building cross-platform mobile applications using JavaScript and React concepts.'
+    },
+    {
+        key: 'C++-Language',
+        categories: [SKILL_CATEGORY.LANGUAGES],
+        proficiency: SKILL_PROFICIENCY.BASIC,
+        context: 'General-purpose programming language used for system programming, performance-critical applications, and game development.'
     },
 
     // Frontend
@@ -668,7 +683,7 @@ export const skills = [
     }
 ]
 
-export const personalLibrary = [
+export const personalLibraryContent = [
     // Programming Languages
     {
         key: 'The C Programming Language',
